@@ -1,24 +1,32 @@
+'use client'
+
+import { Plus, Brain, Bell, TrendingUp } from '@phosphor-icons/react'
+
 const steps = [
   {
     number: '01',
+    icon: <Plus className="w-8 h-8 text-white" weight="bold" />,
     title: 'Add your ingredients',
     description: 'Tell Xpiri what you have — via voice, text, or photo. It remembers everything.',
     example: '"5kg chicken breast, expires July 28"',
   },
   {
     number: '02',
+    icon: <Brain className="w-8 h-8 text-white" weight="duotone" />,
     title: 'Xpiri tracks & remembers',
     description: 'Our AI builds a knowledge graph of your kitchen. Every item, every expiry date, every recipe.',
     example: 'Chicken → expires July 28 → use in stir-fry or Caesar salad',
   },
   {
     number: '03',
+    icon: <Bell className="w-8 h-8 text-white" weight="duotone" />,
     title: 'Get smart alerts',
     description: 'When something is about to expire, Xpiri notifies you with recipe ideas and action options.',
     example: '📱 "Chicken expires tomorrow! Try this 15-min stir-fry recipe"',
   },
   {
     number: '04',
+    icon: <TrendingUp className="w-8 h-8 text-white" weight="duotone" />,
     title: 'Reduce waste, save money',
     description: 'Track your progress over time. See how much food and money you\'ve saved.',
     example: '📊 "This month: 34% less waste, $420 saved"',
@@ -46,9 +54,9 @@ export default function HowItWorks() {
               key={index}
               className="flex flex-col md:flex-row items-start gap-8 p-8 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow"
             >
-              {/* Step number */}
-              <div className="flex-shrink-0 w-16 h-16 bg-xpiri-green text-white rounded-2xl flex items-center justify-center text-2xl font-bold">
-                {step.number}
+              {/* Step number with icon */}
+              <div className="flex-shrink-0 w-16 h-16 bg-xpiri-green text-white rounded-2xl flex items-center justify-center">
+                {step.icon}
               </div>
 
               {/* Content */}

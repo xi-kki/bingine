@@ -1,25 +1,31 @@
-# 🍳 Xpiri
+# 🍎 Xpiri
 
 **Never let good food go bad.**
 
-Xpiri is an offline AI agent for food waste tracking, built for food tech founders who care about sustainability.
+Xpiri is an offline AI agent for food waste tracking. Track your ingredients, get expiry alerts, and receive recipe suggestions — all running locally on your device.
 
-![Xpiri Banner](public/og.png)
+![Xpiri](preview.png)
 
 ## ✨ Features
 
-- 🧠 **Smart Expiry Tracking** - Knowledge graph remembers every ingredient and its expiry date
-- 🍳 **Recipe Suggestions** - Get recipe ideas based on what's about to expire
-- 📱 **Instant Alerts** - Telegram, WhatsApp, SMS notifications
-- 🔒 **100% Offline** - Your data stays on your device. No cloud, no tracking
-- 📊 **Waste Analytics** - Track your waste reduction over time
-- 🌱 **Donate & Compost** - Route near-expiry items to food banks
+- 🧠 **Smart Expiry Tracking** — Xpiri remembers every ingredient and its expiry date
+- 🍳 **Recipe Suggestions** — Get recipe ideas based on what's about to expire
+- 📱 **Instant Alerts** — Telegram, WhatsApp, SMS notifications
+- 🔒 **100% Offline** — Your data stays on your device. No cloud, no tracking
+- 📊 **Waste Analytics** — Track your waste reduction over time
+- 🌱 **Donate & Compost** — Route near-expiry items to food banks
 
 ## 🚀 Quick Start
 
+### Option 1: Standalone (No install required)
+
+Just open `dist/index.html` in your browser. Works immediately!
+
+### Option 2: Development
+
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/xpiri.git
+git clone https://github.com/xi-kki/xpiri.git
 cd xpiri
 
 # Install dependencies
@@ -29,62 +35,74 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to see the landing page.
+Open [http://localhost:3000](http://localhost:3000)
 
 ## 🛠️ Tech Stack
 
-- **Framework:** Next.js 14
-- **Styling:** Tailwind CSS
-- **Language:** TypeScript
-- **AI Backend:** Thoth (Ollama)
-- **Deployment:** Vercel
+| Layer | Technology |
+|-------|------------|
+| **Framework** | Next.js 14 |
+| **Styling** | Tailwind CSS |
+| **Icons** | Phosphor Icons |
+| **Language** | TypeScript |
+| **Storage** | LocalStorage (offline) |
+| **Deployment** | Vercel / Static |
 
-## 📦 Project Structure
+## 📁 Project Structure
 
 ```
 xpiri/
 ├── src/
 │   ├── app/
-│   │   ├── layout.tsx      # Root layout
-│   │   ├── page.tsx        # Landing page
-│   │   └── globals.css     # Global styles
-│   └── components/
-│       ├── Hero.tsx        # Hero section
-│       ├── Features.tsx    # Features grid
-│       ├── HowItWorks.tsx  # Step-by-step guide
-│       ├── CTA.tsx         # Call to action
-│       └── Footer.tsx      # Footer
-├── public/                 # Static assets
+│   │   ├── page.tsx          # Landing page
+│   │   ├── layout.tsx        # Root layout
+│   │   ├── globals.css       # Global styles
+│   │   └── dashboard/
+│   │       └── page.tsx      # Dashboard
+│   ├── components/
+│   │   ├── Hero.tsx
+│   │   ├── Features.tsx
+│   │   ├── HowItWorks.tsx
+│   │   ├── CTA.tsx
+│   │   └── Footer.tsx
+│   └── lib/
+│       └── foodStore.ts      # LocalStorage manager
+├── dist/
+│   └── index.html            # Standalone version
+├── preview-landing.html      # Landing preview
+├── preview-dashboard.html    # Dashboard preview
 ├── package.json
-├── tailwind.config.ts
-├── tsconfig.json
-└── next.config.js
+└── README.md
 ```
 
 ## 🎨 Design
 
-- **Primary Color:** `#2D5A27` (Fresh Green)
-- **Accent Color:** `#4CAF50` (Living Green)
+- **Primary:** `#2D5A27` (Fresh Green)
+- **Accent:** `#4CAF50` (Living Green)
 - **Warning:** `#FF9800` (Expiry Orange)
 - **Danger:** `#F44336` (Spoiled Red)
+- **Icons:** [Phosphor Icons](https://phosphoricons.com) — 6 weights, 7,000+ icons
 
-## 🚢 Deployment
+## 📱 Usage
 
-### Vercel (Recommended)
+1. **Add items** — Click "Add Item" and enter your food details
+2. **Track expiry** — Xpiri automatically tracks expiry status
+3. **Get recipes** — See recipe suggestions for expiring items
+4. **Save money** — Watch your waste rate go down
 
-1. Push to GitHub
-2. Import repository on [vercel.com](https://vercel.com)
-3. Deploy automatically
+## 🔒 Privacy
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/xpiri)
+- **100% offline** — No data leaves your device
+- **No accounts** — No signup required
+- **No tracking** — Your kitchen data stays private
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) first.
+Contributions welcome! Please read our [Contributing Guide](CONTRIBUTING.md) first.
 
 ## 📄 License
 
-MIT License - see [LICENSE](LICENSE) for details.
+MIT License — see [LICENSE](LICENSE) for details.
 
 ---
 

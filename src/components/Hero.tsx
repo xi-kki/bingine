@@ -1,3 +1,7 @@
+'use client'
+
+import { Leaf, Github, ExternalLink } from '@phosphor-icons/react'
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-xpiri-green/10 to-white">
@@ -9,7 +13,8 @@ export default function Hero() {
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         {/* Logo */}
-        <div className="mb-8">
+        <div className="mb-8 flex items-center justify-center gap-3">
+          <Leaf className="w-16 h-16 md:w-20 md:h-20 text-xpiri-green" weight="duotone" />
           <h1 className="text-6xl md:text-8xl font-bold text-xpiri-green tracking-tight">
             Xpiri
           </h1>
@@ -28,12 +33,14 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-8 py-4 bg-xpiri-green text-white rounded-full font-semibold text-lg hover:bg-xpiri-green/90 transition-all hover:scale-105 shadow-lg shadow-xpiri-green/25">
+          <a href="/dashboard" className="px-8 py-4 bg-xpiri-green text-white rounded-full font-semibold text-lg hover:bg-xpiri-green/90 transition-all hover:scale-105 shadow-lg shadow-xpiri-green/25 text-center flex items-center justify-center gap-2">
+            <Leaf className="w-5 h-5" weight="duotone" />
             Get Started Free
-          </button>
-          <button className="px-8 py-4 border-2 border-xpiri-green text-xpiri-green rounded-full font-semibold text-lg hover:bg-xpiri-green/5 transition-all">
-            Watch Demo
-          </button>
+          </a>
+          <a href="https://github.com/xi-kki/xpiri" className="px-8 py-4 border-2 border-xpiri-green text-xpiri-green rounded-full font-semibold text-lg hover:bg-xpiri-green/5 transition-all text-center flex items-center justify-center gap-2">
+            <Github className="w-5 h-5" weight="duotone" />
+            View on GitHub
+          </a>
         </div>
 
         {/* Trust badges */}

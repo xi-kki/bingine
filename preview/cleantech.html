@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xpiri — CleanTech Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #19261D;
+            --bg-darker: #0F1A12;
+            --accent: #4CAF50;
+            --accent-light: #81C784;
+            --text-primary: #E2DBC8;
+            --text-secondary: rgba(226, 219, 200, 0.6);
+            --card-bg: #1C261E;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: rgba(76, 175, 80, 0.3);
+        }
+
+        /* Dice Icon */
+        .dice-icon {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 48px;
+            height: 48px;
+            background: var(--text-primary);
+            border-radius: 12px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 4px;
+            padding: 10px;
+            z-index: 100;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .dice-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .dice-dot {
+            width: 7px;
+            height: 7px;
+            background: var(--bg-darker);
+            border-radius: 50%;
+            justify-self: center;
+            align-self: center;
+        }
+
+        .dice-dot:nth-child(1) { grid-area: 1 / 1; }
+        .dice-dot:nth-child(2) { grid-area: 1 / 3; }
+        .dice-dot:nth-child(3) { grid-area: 2 / 2; }
+        .dice-dot:nth-child(4) { grid-area: 3 / 1; }
+        .dice-dot:nth-child(5) { grid-area: 3 / 3; }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #2a3d2e;
+            padding: 12px;
+        }
+
+        .hero-card {
+            flex: 1;
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(25, 38, 29, 0.4) 0%, rgba(25, 38, 29, 0.8) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            padding: 60px 40px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hero-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .hero-main {
+            max-width: 800px;
+        }
+
+        .hero-title {
+            font-size: clamp(48px, 8vw, 96px);
+            font-weight: 300;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: rgba(226, 219, 200, 0.85);
+            margin-bottom: 32px;
+        }
+
+        .hero-title span {
+            color: var(--accent-light);
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 500px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            transition: color 0.3s ease;
+        }
+
+        .hero-cta:hover {
+            color: var(--text-primary);
+        }
+
+        .hero-cta svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-cta:hover svg {
+            transform: translateX(4px);
+        }
+
+        .social-bar {
+            display: flex;
+            gap: 16px;
+            background: #2a3d2e;
+            padding: 16px 24px;
+            border-radius: 0 20px 0 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .social-bar a {
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        .social-bar a:hover {
+            color: var(--text-primary);
+        }
+
+        /* About Section */
+        .about {
+            background: var(--bg-darker);
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            padding: 60px 40px;
+        }
+
+        .about-text {
+            font-size: clamp(24px, 4vw, 56px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--text-primary);
+            max-width: 1200px;
+        }
+
+        .about-text .highlight {
+            opacity: 1;
+        }
+
+        .about-text .dim {
+            opacity: 0.3;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--bg-dark);
+            padding: 120px 40px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 48px 40px;
+            border: 1px solid rgba(76, 175, 80, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .stat-card:hover {
+            border-color: rgba(76, 175, 80, 0.3);
+            transform: translateY(-8px);
+        }
+
+        .stat-number {
+            font-size: 64px;
+            font-weight: 300;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .stat-desc {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Features Section */
+        .features {
+            background: var(--bg-darker);
+            padding: 120px 40px;
+        }
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .features-title {
+            font-size: clamp(36px, 5vw, 64px);
+            font-weight: 300;
+            margin-bottom: 24px;
+        }
+
+        .features-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, var(--card-bg) 0%, rgba(76, 175, 80, 0.05) 100%);
+            border-radius: 24px;
+            padding: 48px 40px;
+            border: 1px solid rgba(76, 175, 80, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(76, 175, 80, 0.3);
+            box-shadow: 0 20px 60px rgba(76, 175, 80, 0.1);
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(76, 175, 80, 0.15);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
+
+        .feature-title {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .feature-desc {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(180deg, var(--bg-dark) 0%, var(--accent) 100%);
+            padding: 160px 40px;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: clamp(40px, 6vw, 80px);
+            font-weight: 300;
+            margin-bottom: 32px;
+        }
+
+        .cta-subtitle {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 48px;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--accent);
+            padding: 18px 40px;
+            border-radius: 100px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 100px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--accent);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-darker);
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-copy {
+            color: rgba(226, 219, 200, 0.4);
+            font-size: 14px;
+        }
+
+        /* Scroll Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero-content {
+                padding: 40px 24px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-top {
+                justify-content: center;
+            }
+
+            .social-bar {
+                display: none;
+            }
+
+            .about, .stats, .features, .cta, .footer {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Dice Icon -->
+    <div class="dice-icon">
+        <div class="dice-dot"></div>
+        <div class="dice-dot"></div>
+        <div class="dice-dot"></div>
+        <div class="dice-dot"></div>
+        <div class="dice-dot"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-card">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-vegetables-in-a-basket-4868-large.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            
+            <div class="hero-content">
+                <div class="hero-top">
+                    <div class="logo">x<span>piri</span></div>
+                    <ul class="nav-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#stats">Impact</a></li>
+                        <li><a href="#cta">Get Started</a></li>
+                    </ul>
+                </div>
+
+                <div class="hero-main">
+                    <h1 class="hero-title reveal">
+                        Smart tracking<br>
+                        for <span>zero food waste</span>
+                    </h1>
+                    <p class="hero-subtitle reveal">
+                        Next-generation offline AI agent that tracks your ingredients, 
+                        suggests recipes before expiry, and helps food tech founders 
+                        build sustainable kitchens.
+                    </p>
+                    <a href="#cta" class="hero-cta reveal">
+                        Start Tracking
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="social-bar">
+                    <a href="#">Twitter</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">Discord</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <p class="about-text reveal">
+            <span class="highlight">Food waste is a $1.2 trillion problem.</span>
+            <span class="dim"> Our planet's ecological balance is shifting at an unprecedented pace. 
+            Resource recovery obstacles have surpassed critical limits, and the pursuit of 
+            transformative solutions has never carried more weight.</span>
+        </p>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats" id="stats">
+        <div class="stats-grid">
+            <div class="stat-card reveal">
+                <div class="stat-number">35%</div>
+                <div class="stat-label">Waste Reduction</div>
+                <div class="stat-desc">Average food waste reduction reported by Xpiri users within the first month.</div>
+            </div>
+            <div class="stat-card reveal">
+                <div class="stat-number">$420</div>
+                <div class="stat-label">Monthly Savings</div>
+                <div class="stat-desc">Average monthly savings for restaurants using smart expiry tracking.</div>
+            </div>
+            <div class="stat-card reveal">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Offline & Private</div>
+                <div class="stat-desc">Your data stays on your device. No cloud, no tracking, no privacy concerns.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="features-header">
+            <h2 class="features-title reveal">Built for food tech founders</h2>
+            <p class="features-subtitle reveal">
+                Everything you need to track ingredients, reduce waste, and build 
+                sustainable kitchen operations.
+            </p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card reveal">
+                <div class="feature-icon">🧠</div>
+                <h3 class="feature-title">Smart Expiry Tracking</h3>
+                <p class="feature-desc">
+                    Xpiri's knowledge graph remembers every ingredient, its expiry date, 
+                    and storage location. No more forgotten items in the back of your fridge.
+                </p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">🍳</div>
+                <h3 class="feature-title">Recipe Suggestions</h3>
+                <p class="feature-desc">
+                    Get recipe ideas based on what's about to expire. 
+                    Use it before you lose it — zero waste, maximum flavor.
+                </p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">📱</div>
+                <h3 class="feature-title">Instant Alerts</h3>
+                <p class="feature-desc">
+                    Get notified via Telegram, WhatsApp, or SMS when items are expiring. 
+                    Never miss a beat in your kitchen operations.
+                </p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">📊</div>
+                <h3 class="feature-title">Waste Analytics</h3>
+                <p class="feature-desc">
+                    Track your waste reduction over time. See how much you've saved 
+                    and where you can improve your operations.
+                </p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title">100% Offline</h3>
+                <p class="feature-desc">
+                    Your data stays on your device. No cloud dependency, 
+                    no internet required — your kitchen, your data.
+                </p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">🌱</div>
+                <h3 class="feature-title">Donate & Compost</h3>
+                <p class="feature-desc">
+                    Route near-expiry items to local food banks or composting. 
+                    Reduce waste, help the community, save the planet.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="cta">
+        <h2 class="cta-title reveal">Ready to stop wasting food?</h2>
+        <p class="cta-subtitle reveal">
+            Join food tech founders who are building sustainable kitchens with Xpiri. 
+            Open source, free forever, runs offline.
+        </p>
+        <div class="cta-buttons reveal">
+            <a href="#" class="btn-primary">Start Tracking Now</a>
+            <a href="#" class="btn-secondary">View on GitHub</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">x<span>piri</span></div>
+        <div class="footer-links">
+            <a href="#">Docs</a>
+            <a href="#">GitHub</a>
+            <a href="#">Discord</a>
+            <a href="#">Twitter</a>
+        </div>
+        <p class="footer-copy">© 2024 Xpiri. Never let good food go bad.</p>
+    </footer>
+
+    <script>
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+    </script>
+</body>
+</html>

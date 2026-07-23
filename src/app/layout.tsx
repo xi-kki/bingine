@@ -1,11 +1,8 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
-
 export const metadata: Metadata = {
-  title: 'Xpiri - Never Let Good Food Go Bad',
+  title: 'Xpiri — Never Let Good Food Go Bad',
   description: 'Offline AI agent for food waste tracking. Built for food tech founders who care about sustainability.',
 }
 
@@ -16,7 +13,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        {/* Fonts */}
+        <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/5ac3fe7c6abd2f62067f266d89671492?family=HelveticaNowDisplay-Medium" />
+        <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/1aa3377e489837a26d019bba501e779d?family=HelveticaNowDisplayW01-Rg" />
+      </head>
+      <body>{children}</body>
     </html>
   )
 }

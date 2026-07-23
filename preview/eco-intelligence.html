@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xpiri — Eco Intelligence Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: #f5f4f0;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(245, 244, 240, 0.3) 0%, rgba(245, 244, 240, 0.9) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 48px;
+        }
+
+        .menu-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            color: #1a1a1a;
+        }
+
+        .menu-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .book-call {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .book-call .dot {
+            width: 8px;
+            height: 8px;
+            background: #4CAF50;
+            border-radius: 50%;
+        }
+
+        /* Ghost Text */
+        .ghost-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(150px, 25vw, 350px);
+            letter-spacing: -0.02em;
+            color: transparent;
+            background: linear-gradient(135deg, #c8c8c8 0%, rgba(200, 200, 200, 0) 50%, #c8c8c8 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            pointer-events: none;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        /* Main Content */
+        .hero-main {
+            flex: 1;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 48px 60px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 60px;
+            width: 100%;
+            align-items: end;
+        }
+
+        .hero-left h1 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 300;
+            line-height: 1.1;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+        }
+
+        .hero-left p {
+            font-size: 16px;
+            color: rgba(26, 26, 26, 0.6);
+            max-width: 400px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .cta-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 0;
+            clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+        }
+
+        .cta-btn:hover {
+            background: rgba(76, 175, 80, 0.1);
+            border-color: rgba(76, 175, 80, 0.3);
+        }
+
+        .cta-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Glass Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            padding: 32px;
+            border-radius: 4px;
+        }
+
+        .glass-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            margin-bottom: 24px;
+        }
+
+        .glass-card-header h3 {
+            font-size: 20px;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        .glass-card-header span {
+            font-size: 12px;
+            color: rgba(26, 26, 26, 0.4);
+        }
+
+        .finding-item {
+            margin-bottom: 20px;
+        }
+
+        .finding-item h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .finding-item p {
+            font-size: 14px;
+            color: rgba(26, 26, 26, 0.6);
+            line-height: 1.6;
+        }
+
+        .finding-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(76, 175, 80, 0.1);
+            border-radius: 100px;
+            font-size: 12px;
+            color: #4CAF50;
+            margin-top: 8px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 120px 48px;
+            background: white;
+        }
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .features-header h2 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+
+        .features-header p {
+            font-size: 18px;
+            color: rgba(26, 26, 26, 0.6);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            padding: 48px 40px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            transition: all 0.4s ease;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(76, 175, 80, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 24px;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+
+        .feature-card p {
+            font-size: 16px;
+            color: rgba(26, 26, 26, 0.6);
+            line-height: 1.7;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 120px 48px;
+            background: #f5f4f0;
+        }
+
+        .how-it-works-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .how-it-works-header h2 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+
+        .steps {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 32px;
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .step:last-child {
+            border-bottom: none;
+        }
+
+        .step-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 64px;
+            color: #4CAF50;
+            line-height: 1;
+        }
+
+        .step-content h3 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .step-content p {
+            font-size: 16px;
+            color: rgba(26, 26, 26, 0.6);
+            line-height: 1.7;
+        }
+
+        .step-example {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 8px 16px;
+            background: rgba(76, 175, 80, 0.08);
+            border-radius: 4px;
+            font-size: 14px;
+            color: #4CAF50;
+            font-family: monospace;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 160px 48px;
+            background: #1a1a1a;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(40px, 6vw, 72px);
+            font-weight: 300;
+            color: white;
+            margin-bottom: 24px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 500px;
+            margin: 0 auto 48px;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-light {
+            padding: 18px 40px;
+            background: white;
+            color: #1a1a1a;
+            border-radius: 100px;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-light:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-outline {
+            padding: 18px 40px;
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 100px;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px 48px;
+            background: #1a1a1a;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 500;
+            color: white;
+        }
+
+        .footer-logo span {
+            color: #4CAF50;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-tagline {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 14px;
+        }
+
+        /* Scroll Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 20px 24px;
+            }
+
+            .menu-btn span {
+                display: none;
+            }
+
+            .hero-main {
+                padding: 0 24px 40px;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .glass-card {
+                display: none;
+            }
+
+            .features, .how-it-works, .cta-section, .footer {
+                padding-left: 24px;
+                padding-right: 24px;
+            }
+
+            .footer {
+                flex-direction: column;
+                gap: 24px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-putting-vegetables-into-a-pan-4870-large.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <nav class="navbar">
+                <button class="menu-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <span>Menu</span>
+                </button>
+                <a href="#" class="book-call">
+                    <span class="dot"></span>
+                    Get Started
+                </a>
+            </nav>
+
+            <div class="ghost-text">XPIRI</div>
+
+            <div class="hero-main">
+                <div class="hero-grid">
+                    <div class="hero-left">
+                        <h1 class="reveal">Signals from<br>the fresh kitchen</h1>
+                        <p class="reveal">
+                            An intelligent agent mapping, tracking, and notifying the silent 
+                            expiration cycles that bind your kitchen's ecological networks.
+                        </p>
+                        <a href="#features" class="cta-btn reveal">
+                            Start Listening
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="glass-card reveal">
+                        <div class="glass-card-header">
+                            <h3>Latest findings</h3>
+                            <span>//02</span>
+                        </div>
+                        <div class="finding-item">
+                            <h4>Expiry Pulse Analysis</h4>
+                            <p>Real-time monitoring of ingredient freshness across your inventory.</p>
+                            <span class="finding-tag">Live</span>
+                        </div>
+                        <div class="finding-item">
+                            <h4>Recipe Intelligence</h4>
+                            <p>AI-powered suggestions based on what's about to expire.</p>
+                            <span class="finding-tag">AI Active</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="features-header">
+            <h2 class="reveal">Intelligence meets sustainability</h2>
+            <p class="reveal">Powered by local AI, designed for food tech founders.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card reveal">
+                <div class="feature-icon">🧠</div>
+                <h3>Knowledge Graph Memory</h3>
+                <p>Every ingredient is tracked as an entity with relationships — expiry dates, suppliers, recipes, and more.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">📡</div>
+                <h3>Real-time Signals</h3>
+                <p>Get instant alerts when items approach expiry. Telegram, WhatsApp, SMS — your choice.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon">🔬</div>
+                <h3>Deep Analysis</h3>
+                <p>Understand your waste patterns. Identify what you overbuy, what you forget, and how to improve.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="how-it-works-header">
+            <h2 class="reveal">How it works</h2>
+        </div>
+        <div class="steps">
+            <div class="step reveal">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <h3>Add your ingredients</h3>
+                    <p>Tell Xpiri what you have — via voice, text, or photo. It remembers everything.</p>
+                    <div class="step-example">"5kg chicken breast, expires July 28"</div>
+                </div>
+            </div>
+            <div class="step reveal">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <h3>Xpiri tracks & remembers</h3>
+                    <p>Our AI builds a knowledge graph of your kitchen. Every item, every expiry date, every recipe.</p>
+                    <div class="step-example">Chicken → expires July 28 → use in stir-fry</div>
+                </div>
+            </div>
+            <div class="step reveal">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <h3>Get smart alerts</h3>
+                    <p>When something is about to expire, Xpiri notifies you with recipe ideas and action options.</p>
+                    <div class="step-example">📱 "Chicken expires tomorrow!"</div>
+                </div>
+            </div>
+            <div class="step reveal">
+                <div class="step-number">04</div>
+                <div class="step-content">
+                    <h3>Reduce waste, save money</h3>
+                    <p>Track your progress over time. See how much food and money you've saved.</p>
+                    <div class="step-example">📊 "34% less waste, $420 saved"</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2 class="reveal">Never let good food go bad</h2>
+        <p class="reveal">
+            Join food tech founders who are building sustainable kitchens. 
+            Open source, free forever, runs offline.
+        </p>
+        <div class="cta-buttons reveal">
+            <a href="#" class="btn-light">Start Tracking Now</a>
+            <a href="#" class="btn-outline">View on GitHub</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">x<span>piri</span></div>
+        <div class="footer-links">
+            <a href="#">Docs</a>
+            <a href="#">GitHub</a>
+            <a href="#">Discord</a>
+            <a href="#">Twitter</a>
+        </div>
+        <p class="footer-tagline">Never let good food go bad.</p>
+    </footer>
+
+    <script>
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+    </script>
+</body>
+</html>

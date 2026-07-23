@@ -1,3 +1,7 @@
+'use client'
+
+import { Leaf, Github, ArrowRight } from '@phosphor-icons/react'
+
 export default function CTA() {
   return (
     <section className="py-24 px-6 bg-xpiri-green">
@@ -11,12 +15,15 @@ export default function CTA() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="px-8 py-4 bg-white text-xpiri-green rounded-full font-semibold text-lg hover:bg-white/90 transition-all hover:scale-105 shadow-lg">
+          <a href="/dashboard" className="px-8 py-4 bg-white text-xpiri-green rounded-full font-semibold text-lg hover:bg-white/90 transition-all hover:scale-105 shadow-lg text-center flex items-center justify-center gap-2">
+            <Leaf className="w-5 h-5" weight="duotone" />
             Start Tracking Now
-          </button>
-          <button className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold text-lg hover:bg-white/10 transition-all">
+            <ArrowRight className="w-5 h-5" weight="bold" />
+          </a>
+          <a href="https://github.com/xi-kki/xpiri" className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold text-lg hover:bg-white/10 transition-all text-center flex items-center justify-center gap-2">
+            <Github className="w-5 h-5" weight="duotone" />
             View on GitHub
-          </button>
+          </a>
         </div>
 
         {/* Social proof */}

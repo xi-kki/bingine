@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xpiri — Never Let Good Food Go Bad</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'xpiri-green': '#2D5A27',
+            'xpiri-fresh': '#4CAF50',
+            'xpiri-warning': '#FF9800',
+            'xpiri-danger': '#F44336',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://db.onlinewebfonts.com/c/5ac3fe7c6abd2f62067f266d89671492?family=HelveticaNowDisplay-Medium');
+    @import url('https://db.onlinewebfonts.com/c/1aa3377e489837a26d019bba501e779d?family=HelveticaNowDisplayW01-Rg');
+    :root { --font-heading: 'HelveticaNowDisplay-Medium', sans-serif; --font-body: 'HelveticaNowDisplayW01-Rg', sans-serif; }
+    body { font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    .cursor-blink { animation: blink 1s step-end infinite; }
+    .video-bg { object-position: 70% center; }
+    .ph { font-size: 1.5rem; }
+  </style>
+</head>
+<body class="bg-white">
+  <!-- Background Video -->
+  <video class="fixed inset-0 w-full h-full object-cover z-0 video-bg" muted playsinline preload="auto" id="bgVideo">
+    <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260530_042513_df96a13b-6155-4f6e-8b93-c9dee66fba08.mp4" type="video/mp4">
+  </video>
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-10 px-5 sm:px-8 py-4 sm:py-5 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <i class="ph ph-leaf text-black text-2xl"></i>
+      <span class="text-[21px] sm:text-[26px] tracking-tight text-black" style="font-family: var(--font-heading);">Xpiri</span>
+    </div>
+    <div class="hidden md:flex items-center gap-2 text-[23px] text-black">
+      <a href="#features" class="hover:opacity-60 transition-opacity">Features</a>
+      <span class="opacity-40">,</span>
+      <a href="#how-it-works" class="hover:opacity-60 transition-opacity">How It Works</a>
+      <span class="opacity-40">,</span>
+      <a href="#pricing" class="hover:opacity-60 transition-opacity">Pricing</a>
+      <span class="opacity-40">,</span>
+      <a href="https://github.com/xi-kki/xpiri" class="hover:opacity-60 transition-opacity">GitHub</a>
+    </div>
+    <a href="#app" onclick="showApp()" class="hidden md:block text-[23px] text-black underline underline-offset-2 hover:opacity-60 transition-opacity">Get Started</a>
+  </nav>
+
+  <!-- Landing Page (shown by default) -->
+  <div id="landing">
+    <!-- Hero Section -->
+    <section class="relative z-1 h-screen flex flex-col justify-end pb-12 md:justify-center md:pb-0 px-5 sm:px-8 md:px-10 overflow-hidden">
+      <div class="max-w-xl relative z-10">
+        <div class="pointer-events-none select-none mb-5 sm:mb-6" style="filter: blur(4px);">
+          <p class="text-black font-normal" style="font-family: var(--font-body); font-size: clamp(18px, 4vw, 26px); line-height: 1.3;">
+            Your fridge is a graveyard of good intentions.<br>
+            Xpiri remembers so you don't have to.
+          </p>
+        </div>
+        <p id="typewriter" class="text-black mb-5 sm:mb-6 min-h-[54px]" style="font-family: var(--font-body); font-size: clamp(18px, 4vw, 26px); line-height: 1.35; font-weight: 400;">
+          <span id="typed-text"></span><span class="cursor-blink inline-block w-[2px] h-[1.1em] bg-black align-middle ml-[2px]"></span>
+        </p>
+        <div id="buttons" class="flex flex-wrap gap-y-1 opacity-0 translate-y-2 transition-all duration-500">
+          <a href="#app" onclick="showApp()" class="inline-flex items-center justify-center bg-white text-black border border-black/10 rounded-full text-[13px] sm:text-[15px] px-4 sm:px-5 py-[0.3em] mx-[0.2em] mb-[0.4em] whitespace-nowrap hover:bg-black hover:text-white transition-colors duration-200">
+            <i class="ph ph-leaf mr-2"></i> Start Tracking Free
+          </a>
+          <a href="https://github.com/xi-kki/xpiri" class="inline-flex items-center justify-center bg-white text-black border border-black/10 rounded-full text-[13px] sm:text-[15px] px-4 sm:px-5 py-[0.3em] mx-[0.2em] mb-[0.4em] whitespace-nowrap hover:bg-black hover:text-white transition-colors duration-200">
+            <i class="ph ph-github-logo mr-2"></i> View on GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pain Points -->
+    <section class="relative z-10 py-20 px-6 bg-white">
+      <div class="max-w-4xl mx-auto text-center">
+        <p class="text-sm uppercase tracking-widest text-gray-400 mb-8">Sound familiar?</p>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="p-6"><i class="ph ph-leaf text-5xl text-green-500 mb-4 block"></i><p class="text-lg text-gray-600">"I bought spinach last week and it's already slimy."</p></div>
+          <div class="p-6"><i class="ph ph-currency-dollar text-5xl text-red-500 mb-4 block"></i><p class="text-lg text-gray-600">"I throw away $200+ of groceries every month."</p></div>
+          <div class="p-6"><i class="ph ph-magic-wand text-5xl text-purple-500 mb-4 block"></i><p class="text-lg text-gray-600">"I have no idea what's in my fridge until it's too late."</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="relative z-10 py-24 px-6 bg-gray-50">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Stop the waste. Start saving.</h2>
+          <p class="text-xl text-gray-500 max-w-2xl mx-auto">Xpiri tracks your food, reminds you before it expires, and suggests recipes. All offline.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="p-8 rounded-2xl border border-gray-100 bg-white hover:border-xpiri-fresh/30 hover:shadow-lg transition-all">
+            <i class="ph ph-brain text-4xl text-xpiri-green mb-4 block"></i>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Never Forget Again</h3>
+            <p class="text-gray-500">Xpiri remembers every item, every expiry date.</p>
+          </div>
+          <div class="p-8 rounded-2xl border border-gray-100 bg-white hover:border-xpiri-fresh/30 hover:shadow-lg transition-all">
+            <i class="ph ph-cooking-pot text-4xl text-xpiri-green mb-4 block"></i>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Use It Before You Lose It</h3>
+            <p class="text-gray-500">Get recipe ideas for what's about to expire.</p>
+          </div>
+          <div class="p-8 rounded-2xl border border-gray-100 bg-white hover:border-xpiri-fresh/30 hover:shadow-lg transition-all">
+            <i class="ph ph-bell text-4xl text-xpiri-green mb-4 block"></i>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Smart Alerts</h3>
+            <p class="text-gray-500">Get notified before food goes bad.</p>
+          </div>
+          <div class="p-8 rounded-2xl border border-gray-100 bg-white hover:border-xpiri-fresh/30 hover:shadow-lg transition-all">
+            <i class="ph ph-lock-key text-4xl text-xpiri-green mb-4 block"></i>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">100% Private</h3>
+            <p class="text-gray-500">Your data stays on your device. No cloud.</p>
+          </div>
+          <div class="p-8 rounded-2xl border border-gray-100 bg-white hover:border-xpiri-fresh/30 hover:shadow-lg transition-all">
+            <i class="ph ph-chart-line-up text-4xl text-xpiri-green mb-4 block"></i>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Watch Your Savings Grow</h3>
+            <p class="text-gray-500">Track how much food and money you've saved.</p>
+          </div>
+          <div class="p-8 rounded-2xl border border-gray-100 bg-white hover:border-xpiri-fresh/30 hover:shadow-lg transition-all">
+            <i class="ph ph-tree text-4xl text-xpiri-green mb-4 block"></i>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Do Good Too</h3>
+            <p class="text-gray-500">Route near-expiry items to food banks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="relative z-10 py-24 px-6 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Three steps. Zero waste.</h2>
+        </div>
+        <div class="space-y-8">
+          <div class="flex flex-col md:flex-row items-start gap-8 p-8 rounded-2xl bg-gray-50 hover:shadow-md transition-shadow">
+            <div class="flex-shrink-0 w-16 h-16 bg-xpiri-green text-white rounded-2xl flex items-center justify-center"><i class="ph ph-plus text-2xl"></i></div>
+            <div class="flex-1">
+              <h3 class="text-2xl font-semibold text-gray-900 mb-2">Add what you have</h3>
+              <p class="text-gray-500 text-lg">Quick add items as you unpack groceries. Done in seconds.</p>
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-row items-start gap-8 p-8 rounded-2xl bg-gray-50 hover:shadow-md transition-shadow">
+            <div class="flex-shrink-0 w-16 h-16 bg-xpiri-green text-white rounded-2xl flex items-center justify-center"><i class="ph ph-brain text-2xl"></i></div>
+            <div class="flex-1">
+              <h3 class="text-2xl font-semibold text-gray-900 mb-2">Xpiri watches your back</h3>
+              <p class="text-gray-500 text-lg">We'll remind you before things expire with recipe ideas.</p>
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-row items-start gap-8 p-8 rounded-2xl bg-gray-50 hover:shadow-md transition-shadow">
+            <div class="flex-shrink-0 w-16 h-16 bg-xpiri-green text-white rounded-2xl flex items-center justify-center"><i class="ph ph-chart-line-up text-2xl"></i></div>
+            <div class="flex-1">
+              <h3 class="text-2xl font-semibold text-gray-900 mb-2">Save money. Feel good.</h3>
+              <p class="text-gray-500 text-lg">Watch your waste go down and savings go up.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="relative z-10 py-24 px-6 bg-xpiri-green">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Stop throwing money in the trash.</h2>
+        <p class="text-xl text-white/80 mb-10">Track your food. Use it before it expires. Watch your savings grow.</p>
+        <a href="#app" onclick="showApp()" class="px-8 py-4 bg-white text-xpiri-green rounded-full font-semibold text-lg hover:bg-white/90 transition-all hover:scale-105 shadow-lg text-center inline-flex items-center gap-2">
+          <i class="ph ph-leaf"></i> Start Tracking Free
+        </a>
+        <p class="mt-6 text-sm text-white/60">No signup. No credit card. Works offline.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-gray-50 border-t border-gray-100">
+      <div class="max-w-6xl mx-auto text-center">
+        <div class="flex items-center justify-center gap-2 mb-4">
+          <i class="ph ph-leaf text-xpiri-green text-xl"></i>
+          <span class="text-2xl font-bold text-xpiri-green">Xpiri</span>
+        </div>
+        <p class="text-gray-400 text-sm">Never let good food go bad. © 2024 Xpiri. MIT License.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- App (Dashboard) - Hidden by default -->
+  <div id="app" class="hidden min-h-screen bg-gray-50">
+    <header class="bg-xpiri-green text-white px-6 py-4">
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <a href="#" onclick="showLanding()" class="text-2xl font-bold flex items-center gap-2"><i class="ph ph-leaf"></i> Xpiri</a>
+        <nav class="flex gap-6">
+          <a href="#" onclick="showLanding()" class="hover:opacity-80">Home</a>
+          <span class="opacity-60">Dashboard</span>
+        </nav>
+      </div>
+    </header>
+    <main class="max-w-6xl mx-auto px-6 py-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div class="bg-white p-6 rounded-2xl shadow-sm"><p class="text-gray-500 text-sm">Total Items</p><p class="text-3xl font-bold text-gray-900" id="stat-total">0</p></div>
+        <div class="bg-white p-6 rounded-2xl shadow-sm"><p class="text-gray-500 text-sm">Fresh</p><p class="text-3xl font-bold text-green-600" id="stat-fresh">0</p></div>
+        <div class="bg-white p-6 rounded-2xl shadow-sm"><p class="text-gray-500 text-sm">Expiring Soon</p><p class="text-3xl font-bold text-orange-600" id="stat-expiring">0</p></div>
+        <div class="bg-white p-6 rounded-2xl shadow-sm"><p class="text-gray-500 text-sm">Expired</p><p class="text-3xl font-bold text-red-600" id="stat-expired">0</p></div>
+      </div>
+      <div class="grid lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2">
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold text-gray-900">My Kitchen</h2>
+            <button onclick="openModal()" class="bg-xpiri-green text-white px-6 py-3 rounded-full font-semibold hover:bg-xpiri-green/90 transition-all hover:scale-105 flex items-center gap-2"><i class="ph ph-plus"></i> Add Item</button>
+          </div>
+          <div id="items-list" class="space-y-3"></div>
+          <div id="empty-state" class="bg-white p-12 rounded-2xl text-center hidden">
+            <i class="ph ph-shopping-cart text-6xl text-gray-300 mx-auto mb-4 block"></i>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Your kitchen is empty</h3>
+            <p class="text-gray-500 mb-6">Add your first food item to start tracking</p>
+            <button onclick="openModal()" class="bg-xpiri-green text-white px-6 py-3 rounded-full font-semibold hover:bg-xpiri-green/90 flex items-center gap-2 mx-auto"><i class="ph ph-plus"></i> Add Your First Item</button>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <div class="bg-white p-6 rounded-2xl shadow-sm">
+            <h3 class="font-semibold text-gray-900 mb-4 flex items-center gap-2"><i class="ph ph-cooking-pot text-xpiri-green"></i> Recipe Ideas</h3>
+            <div id="recipes-list"><p class="text-gray-500 text-sm">Add items expiring soon to get recipe suggestions!</p></div>
+          </div>
+          <div class="bg-white p-6 rounded-2xl shadow-sm">
+            <h3 class="font-semibold text-gray-900 mb-4 flex items-center gap-2"><i class="ph ph-chart-bar text-xpiri-green"></i> Waste Stats</h3>
+            <div class="flex justify-between items-center mb-2"><span class="text-gray-500 text-sm">Waste Rate</span><span class="font-semibold text-red-600" id="waste-rate">0%</span></div>
+            <div class="w-full bg-gray-200 rounded-full h-2 mb-2"><div id="waste-bar" class="bg-red-500 h-2 rounded-full transition-all" style="width: 0%"></div></div>
+            <p id="waste-message" class="text-xs text-gray-500">Add items to track your waste rate</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Add Item Modal -->
+  <div id="modal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4 hidden">
+    <div class="bg-white rounded-2xl w-full max-w-md p-6">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-xl font-bold text-gray-900">Add Food Item</h2>
+        <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600"><i class="ph ph-x text-xl"></i></button>
+      </div>
+      <div class="space-y-4">
+        <div><label class="block text-sm font-medium text-gray-700 mb-1">Item Name *</label><input type="text" id="input-name" placeholder="e.g., Chicken breast" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-xpiri-green"></div>
+        <div><label class="block text-sm font-medium text-gray-700 mb-1">Quantity</label><input type="text" id="input-quantity" placeholder="e.g., 500g" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-xpiri-green"></div>
+        <div><label class="block text-sm font-medium text-gray-700 mb-1">Category</label><select id="input-category" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-xpiri-green"><option value="vegetables">Vegetables</option><option value="fruits">Fruits</option><option value="meat">Meat & Fish</option><option value="dairy">Dairy</option><option value="grains">Grains & Bread</option><option value="beverages">Beverages</option><option value="condiments">Condiments</option><option value="snacks">Snacks</option><option value="other" selected>Other</option></select></div>
+        <div><label class="block text-sm font-medium text-gray-700 mb-1">Expiry Date *</label><input type="date" id="input-expiry" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-xpiri-green"></div>
+      </div>
+      <div class="flex gap-3 mt-6">
+        <button onclick="closeModal()" class="flex-1 px-4 py-3 border border-gray-200 rounded-xl font-semibold text-gray-700 hover:bg-gray-50">Cancel</button>
+        <button onclick="addItem()" class="flex-1 px-4 py-3 bg-xpiri-green text-white rounded-xl font-semibold hover:bg-xpiri-green/90 flex items-center justify-center gap-2"><i class="ph ph-plus"></i> Add</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Data
+    const CATEGORY_ICONS = { vegetables: '🥬', fruits: '🍎', meat: '🥩', dairy: '🧀', grains: '🍞', beverages: '🥤', condiments: '🫙', snacks: '🍿', other: '📦' };
+    const RECIPES = { chicken: ['Stir-fry', 'Chicken soup'], beef: ['Beef stew', 'Tacos'], fish: ['Fish tacos', 'Baked salmon'], milk: ['Pancakes', 'Smoothie'], cheese: ['Grilled cheese', 'Quesadilla'], bread: ['French toast', 'Croutons'], tomato: ['Pasta sauce', 'Bruschetta'], potato: ['Mashed potatoes', 'Fries'], egg: ['Omelette', 'Quiche'], rice: ['Fried rice', 'Risotto'] };
+    let items = JSON.parse(localStorage.getItem('xpiri-items') || '[]');
+
+    // Navigation
+    function showApp() { document.getElementById('landing').classList.add('hidden'); document.getElementById('app').classList.remove('hidden'); render(); }
+    function showLanding() { document.getElementById('landing').classList.remove('hidden'); document.getElementById('app').classList.add('hidden'); }
+
+    // Status
+    function getStatus(d) { const days = Math.ceil((new Date(d) - new Date()) / 86400000); return days < 0 ? 'expired' : days <= 2 ? 'expiring' : days <= 7 ? 'warning' : 'fresh'; }
+    function getStatusColor(s) { return { fresh: 'bg-green-100 text-green-800 border-green-200', warning: 'bg-yellow-100 text-yellow-800 border-yellow-200', expiring: 'bg-orange-100 text-orange-800 border-orange-200', expired: 'bg-red-100 text-red-800 border-red-200' }[s]; }
+    function getStatusLabel(s) { return { fresh: 'Fresh', warning: 'Use Soon', expiring: 'Expiring!', expired: 'Expired' }[s]; }
+    function getDaysLeft(d) { return Math.ceil((new Date(d) - new Date()) / 86400000); }
+
+    // Render
+    function render() {
+      const list = document.getElementById('items-list');
+      const empty = document.getElementById('empty-state');
+      items.sort((a, b) => new Date(a.expiryDate) - new Date(b.expiryDate));
+      
+      if (items.length === 0) { list.innerHTML = ''; empty.classList.remove('hidden'); }
+      else {
+        empty.classList.add('hidden');
+        list.innerHTML = items.map(item => {
+          const status = getStatus(item.expiryDate);
+          const days = getDaysLeft(item.expiryDate);
+          const daysText = days < 0 ? `Expired ${Math.abs(days)}d ago` : days === 0 ? 'Today' : `${days}d left`;
+          return `<div class="bg-white p-4 rounded-xl border ${getStatusColor(status)} flex items-center gap-4">
+            <span class="text-3xl">${CATEGORY_ICONS[item.category] || '📦'}</span>
+            <div class="flex-1"><div class="flex items-center gap-2"><h3 class="font-semibold text-gray-900">${item.name}</h3><span class="text-sm text-gray-500">×${item.quantity}</span></div><p class="text-sm text-gray-500">${daysText}</p></div>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(status)}">${getStatusLabel(status)}</span>
+            <button onclick="deleteItem('${item.id}')" class="text-gray-400 hover:text-red-500 p-2"><i class="ph ph-trash text-lg"></i></button>
+          </div>`;
+        }).join('');
+      }
+
+      // Stats
+      const total = items.length, fresh = items.filter(i => getStatus(i.expiryDate) === 'fresh').length;
+      const expiring = items.filter(i => ['expiring', 'warning'].includes(getStatus(i.expiryDate))).length;
+      const expired = items.filter(i => getStatus(i.expiryDate) === 'expired').length;
+      const wasteRate = total > 0 ? Math.round((expired / total) * 100) : 0;
+      document.getElementById('stat-total').textContent = total;
+      document.getElementById('stat-fresh').textContent = fresh;
+      document.getElementById('stat-expiring').textContent = expiring;
+      document.getElementById('stat-expired').textContent = expired;
+      document.getElementById('waste-rate').textContent = wasteRate + '%';
+      document.getElementById('waste-bar').style.width = wasteRate + '%';
+
+      // Recipes
+      const recipesList = document.getElementById('recipes-list');
+      const expiringItems = items.filter(i => { const d = getDaysLeft(i.expiryDate); return d >= 0 && d <= 3; });
+      if (expiringItems.length === 0) recipesList.innerHTML = '<p class="text-gray-500 text-sm">Add items expiring soon for recipe ideas!</p>';
+      else recipesList.innerHTML = expiringItems.slice(0, 3).map(item => {
+        const key = Object.keys(RECIPES).find(k => item.name.toLowerCase().includes(k));
+        const recipes = key ? RECIPES[key] : ['Stir-fry', 'Soup'];
+        return `<div class="p-3 bg-gray-50 rounded-lg mb-3"><p class="font-medium text-sm text-gray-900">${item.name}</p><div class="flex flex-wrap gap-1 mt-2">${recipes.map(r => `<span class="text-xs bg-xpiri-green/10 text-xpiri-green px-2 py-1 rounded">${r}</span>`).join('')}</div></div>`;
+      }).join('');
+    }
+
+    function openModal() { document.getElementById('modal').classList.remove('hidden'); }
+    function closeModal() { document.getElementById('modal').classList.add('hidden'); ['input-name','input-quantity','input-expiry'].forEach(id => document.getElementById(id).value = ''); }
+    function addItem() {
+      const name = document.getElementById('input-name').value.trim();
+      const expiryDate = document.getElementById('input-expiry').value;
+      if (!name || !expiryDate) return alert('Enter name and expiry date');
+      items.push({ id: Date.now().toString(), name, quantity: document.getElementById('input-quantity').value.trim() || '1', category: document.getElementById('input-category').value, expiryDate });
+      localStorage.setItem('xpiri-items', JSON.stringify(items));
+      closeModal(); render();
+    }
+    function deleteItem(id) { items = items.filter(i => i.id !== id); localStorage.setItem('xpiri-items', JSON.stringify(items)); render(); }
+
+    // Video scrub (smooth)
+    const video = document.getElementById('bgVideo');
+    let currentScrub = 0, targetScrub = 0, isVideoReady = false;
+    video.addEventListener('loadedmetadata', () => { isVideoReady = true; video.currentTime = video.duration * 0.35; });
+    document.addEventListener('mousemove', e => { targetScrub = (e.clientX / window.innerWidth - 0.5) * 1.5; });
+    (function animate() {
+      if (isVideoReady && video.duration) {
+        currentScrub += (targetScrub - currentScrub) * 0.06;
+        const t = Math.max(0, Math.min(video.duration, video.duration * 0.35 + Math.max(-1, Math.min(1, currentScrub)) * video.duration * 0.35));
+        if (Math.abs(video.currentTime - t) > 0.015) video.currentTime = t;
+      }
+      requestAnimationFrame(animate);
+    })();
+
+    // Typewriter
+    const text = "You bought it with good intentions. Now it's rotting in the back of your fridge. Sound familiar?";
+    let i = 0;
+    setTimeout(() => { const iv = setInterval(() => { if (i < text.length) { document.getElementById('typed-text').textContent += text.charAt(i); i++; } else clearInterval(iv); }, 38); }, 600);
+    setTimeout(() => { const b = document.getElementById('buttons'); b.classList.remove('opacity-0', 'translate-y-2'); b.classList.add('opacity-100', 'translate-y-0'); }, 400);
+  </script>
+</body>
+</html>

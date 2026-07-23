@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xpiri — Never Let Good Food Go Bad</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'xpiri-green': '#2D5A27',
+            'xpiri-fresh': '#4CAF50',
+            'xpiri-warning': '#FF9800',
+            'xpiri-danger': '#F44336',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://db.onlinewebfonts.com/c/5ac3fe7c6abd2f62067f266d89671492?family=HelveticaNowDisplay-Medium');
+    @import url('https://db.onlinewebfonts.com/c/1aa3377e489837a26d019bba501e779d?family=HelveticaNowDisplayW01-Rg');
+    
+    :root {
+      --font-heading: 'HelveticaNowDisplay-Medium', sans-serif;
+      --font-body: 'HelveticaNowDisplayW01-Rg', sans-serif;
+    }
+    
+    body {
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    
+    .cursor-blink {
+      animation: blink 1s step-end infinite;
+    }
+    
+    .video-bg {
+      object-position: 70% center;
+    }
+  </style>
+</head>
+<body class="bg-white">
+  <!-- Background Video -->
+  <video 
+    class="fixed inset-0 w-full h-full object-cover z-0 video-bg" 
+    muted 
+    playsinline 
+    preload="auto"
+    id="bgVideo"
+  >
+    <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260530_042513_df96a13b-6155-4f6e-8b93-c9dee66fba08.mp4" type="video/mp4">
+  </video>
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-10 px-5 sm:px-8 py-4 sm:py-5 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <span class="text-[21px] sm:text-[26px] tracking-tight text-black" style="font-family: var(--font-heading);">Xpiri</span>
+      <span class="text-[25px] sm:text-[30px] text-black select-none" style="letter-spacing: -0.02em;">✳︎</span>
+    </div>
+    <div class="hidden md:flex items-center gap-2 text-[23px] text-black">
+      <a href="#features" class="hover:opacity-60 transition-opacity">Features</a>
+      <span class="opacity-40">,</span>
+      <a href="#how-it-works" class="hover:opacity-60 transition-opacity">How It Works</a>
+      <span class="opacity-40">,</span>
+      <a href="#pricing" class="hover:opacity-60 transition-opacity">Pricing</a>
+      <span class="opacity-40">,</span>
+      <a href="https://github.com/xi-kki/xpiri" class="hover:opacity-60 transition-opacity">GitHub</a>
+    </div>
+    <a href="dashboard.html" class="hidden md:block text-[23px] text-black underline underline-offset-2 hover:opacity-60 transition-opacity">Get Started</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative z-1 h-screen flex flex-col justify-end pb-12 md:justify-center md:pb-0 px-5 sm:px-8 md:px-10 overflow-hidden">
+    <div class="max-w-xl relative z-10">
+      <!-- Blurred Intro Label -->
+      <div class="pointer-events-none select-none mb-5 sm:mb-6" style="filter: blur(4px);">
+        <p class="text-black font-normal" style="font-family: var(--font-body); font-size: clamp(18px, 4vw, 26px); line-height: 1.3;">
+          You opened the fridge. Again. And there it is — that bag of spinach you bought with good intentions, now a slimy science experiment.
+        </p>
+      </div>
+
+      <!-- Typewriter Text -->
+      <p id="typewriter" class="text-black mb-5 sm:mb-6 min-h-[54px]" style="font-family: var(--font-body); font-size: clamp(18px, 4vw, 26px); line-height: 1.35; font-weight: 400;">
+        <span id="typed-text"></span><span class="cursor-blink inline-block w-[2px] h-[1.1em] bg-black align-middle ml-[2px]"></span>
+      </p>
+
+      <!-- Action Pill Buttons -->
+      <div id="buttons" class="flex flex-wrap gap-y-1 opacity-0 translate-y-2 transition-all duration-500">
+        <a href="dashboard.html" class="inline-flex items-center justify-center bg-white text-black border border-black/10 rounded-full text-[13px] sm:text-[15px] px-4 sm:px-5 py-[0.3em] mx-[0.2em] mb-[0.4em] whitespace-nowrap hover:bg-black hover:text-white transition-colors duration-200">
+          Start Tracking Free
+        </a>
+        <a href="https://github.com/xi-kki/xpiri" class="inline-flex items-center justify-center bg-white text-black border border-black/10 rounded-full text-[13px] sm:text-[15px] px-4 sm:px-5 py-[0.3em] mx-[0.2em] mb-[0.4em] whitespace-nowrap hover:bg-black hover:text-white transition-colors duration-200">
+          View on GitHub
+        </a>
+        <a href="#" class="inline-flex items-center justify-center bg-white text-black border border-black/10 rounded-full text-[13px] sm:text-[15px] px-4 sm:px-5 py-[0.3em] mx-[0.2em] mb-[0.4em] whitespace-nowrap hover:bg-black hover:text-white transition-colors duration-200">
+          Join Discord
+        </a>
+        <a href="#" class="inline-flex items-center justify-center bg-white text-black border border-black/10 rounded-full text-[13px] sm:text-[15px] px-4 sm:px-5 py-[0.3em] mx-[0.2em] mb-[0.4em] whitespace-nowrap hover:bg-black hover:text-white transition-colors duration-200">
+          Read the Docs
+        </a>
+        <button onclick="copyEmail()" class="inline-flex items-center justify-center text-white bg-transparent border border-white rounded-full text-[13px] sm:text-[15px] px-4 sm:px-5 py-[0.3em] mx-[0.2em] mb-[0.4em] whitespace-nowrap hover:bg-white hover:text-black transition-colors duration-200 gap-2 sm:gap-3">
+          <span>Reach us: <span class="underline underline-offset-1">hello@xpiri.ai</span></span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Point Section — The "You Know This Feeling" -->
+  <section class="relative z-10 py-20 px-6 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm uppercase tracking-widest text-gray-400 mb-8">Sound familiar?</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6">
+          <span class="text-5xl mb-4 block">🥬</span>
+          <p class="text-lg text-gray-600 leading-relaxed">"I bought spinach last week and it's already slimy in the back of the fridge."</p>
+        </div>
+        <div class="p-6">
+          <span class="text-5xl mb-4 block">💸</span>
+          <p class="text-lg text-gray-600 leading-relaxed">"I throw away $200+ of groceries every month. That's $2,400 a year in the trash."</p>
+        </div>
+        <div class="p-6">
+          <span class="text-5xl mb-4 block">🤯</span>
+          <p class="text-lg text-gray-600 leading-relaxed">"I have no idea what's in my fridge until it's too late."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem — Why This Happens -->
+  <section class="relative z-10 py-20 px-6 bg-gray-50">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">You're not bad at cooking. You're bad at remembering.</h2>
+      <p class="text-xl text-gray-500 leading-relaxed">
+        Life gets busy. Groceries get buried. Expiration dates sneak up. And suddenly, that $8 chicken is a $8 biohazard. 
+        <strong class="text-gray-700">It's not your fault — it's a memory problem.</strong> And Xpiri solves it.
+      </p>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="relative z-10 py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Stop the waste. Start saving.</h2>
+        <p class="text-xl text-gray-500 max-w-2xl mx-auto">Xpiri tracks your food, reminds you before it expires, and suggests recipes to use what you have. All offline. All private.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="p-8 rounded-2xl border border-gray-100 hover:border-xpiri-fresh/30 hover:shadow-lg transition-all group">
+          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🧠</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Never Forget Again</h3>
+          <p class="text-gray-500 leading-relaxed">Xpiri remembers every item, every expiry date. No more "oh no, that's expired?" moments at 11pm.</p>
+        </div>
+        <div class="p-8 rounded-2xl border border-gray-100 hover:border-xpiri-fresh/30 hover:shadow-lg transition-all group">
+          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🍳</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Use It Before You Lose It</h3>
+          <p class="text-gray-500 leading-relaxed">Get recipe ideas for what's about to expire. Turn "oops" into "yum."</p>
+        </div>
+        <div class="p-8 rounded-2xl border border-gray-100 hover:border-xpiri-fresh/30 hover:shadow-lg transition-all group">
+          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">📱</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Smart Alerts Before It's Too Late</h3>
+          <p class="text-gray-500 leading-relaxed">Telegram, WhatsApp, SMS — get notified before food goes bad. Not after.</p>
+        </div>
+        <div class="p-8 rounded-2xl border border-gray-100 hover:border-xpiri-fresh/30 hover:shadow-lg transition-all group">
+          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🔒</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">100% Private</h3>
+          <p class="text-gray-500 leading-relaxed">Your data stays on your device. No cloud. No tracking. Your kitchen, your business.</p>
+        </div>
+        <div class="p-8 rounded-2xl border border-gray-100 hover:border-xpiri-fresh/30 hover:shadow-lg transition-all group">
+          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">📊</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Watch Your Savings Grow</h3>
+          <p class="text-gray-500 leading-relaxed">Track how much food and money you've saved. Seeing the numbers feels good.</p>
+        </div>
+        <div class="p-8 rounded-2xl border border-gray-100 hover:border-xpiri-fresh/30 hover:shadow-lg transition-all group">
+          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🌱</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Do Good Too</h3>
+          <p class="text-gray-500 leading-relaxed">Route near-expiry items to food banks. Less waste, more help.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="relative z-10 py-24 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Three steps. Zero waste.</h2>
+        <p class="text-xl text-gray-500 max-w-2xl mx-auto">No complicated setup. No cloud. Just you and your kitchen.</p>
+      </div>
+      <div class="space-y-8">
+        <div class="flex flex-col md:flex-row items-start gap-8 p-8 rounded-2xl bg-white hover:shadow-md transition-shadow">
+          <div class="flex-shrink-0 w-16 h-16 bg-xpiri-green text-white rounded-2xl flex items-center justify-center text-2xl font-bold">01</div>
+          <div class="flex-1">
+            <h3 class="text-2xl font-semibold text-gray-900 mb-2">Add what you have</h3>
+            <p class="text-gray-500 text-lg mb-4">Quick add items as you unpack groceries. Name, quantity, expiry — done in seconds.</p>
+            <div class="inline-block px-4 py-2 bg-xpiri-green/5 text-xpiri-green rounded-lg font-mono text-sm">"5kg chicken breast, expires July 28"</div>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row items-start gap-8 p-8 rounded-2xl bg-white hover:shadow-md transition-shadow">
+          <div class="flex-shrink-0 w-16 h-16 bg-xpiri-green text-white rounded-2xl flex items-center justify-center text-2xl font-bold">02</div>
+          <div class="flex-1">
+            <h3 class="text-2xl font-semibold text-gray-900 mb-2">Xpiri watches your back</h3>
+            <p class="text-gray-500 text-lg mb-4">We'll remind you before things expire — with recipe ideas. No more "what's for dinner?" panic.</p>
+            <div class="inline-block px-4 py-2 bg-xpiri-green/5 text-xpiri-green rounded-lg font-mono text-sm">📱 "Chicken expires tomorrow! Try this 15-min stir-fry"</div>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row items-start gap-8 p-8 rounded-2xl bg-white hover:shadow-md transition-shadow">
+          <div class="flex-shrink-0 w-16 h-16 bg-xpiri-green text-white rounded-2xl flex items-center justify-center text-2xl font-bold">03</div>
+          <div class="flex-1">
+            <h3 class="text-2xl font-semibold text-gray-900 mb-2">Save money. Feel good.</h3>
+            <p class="text-gray-500 text-lg mb-4">Watch your waste go down and your savings go up. That's money back in your pocket.</p>
+            <div class="inline-block px-4 py-2 bg-xpiri-green/5 text-xpiri-green rounded-lg font-mono text-sm">📊 "This month: 34% less waste, $420 saved"</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Numbers — Social Proof / Urgency -->
+  <section class="relative z-10 py-16 px-6 bg-xpiri-green">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-white/70 text-sm uppercase tracking-widest mb-8">The food waste problem is massive</p>
+      <div class="grid md:grid-cols-3 gap-8 text-white">
+        <div>
+          <p class="text-5xl font-bold mb-2">1.3B</p>
+          <p class="text-white/80">tons of food wasted globally each year</p>
+        </div>
+        <div>
+          <p class="text-5xl font-bold mb-2">$1,500</p>
+          <p class="text-white/80">average family wastes per year on groceries</p>
+        </div>
+        <div>
+          <p class="text-5xl font-bold mb-2">8-10%</p>
+          <p class="text-white/80">of global greenhouse gas comes from food waste</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Objection Demolition -->
+  <section class="relative z-10 py-20 px-6 bg-white">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">But wait...</h2>
+      <div class="space-y-6">
+        <div class="p-6 bg-gray-50 rounded-2xl">
+          <p class="font-semibold text-gray-900 mb-2">"I've tried apps before. They never stick."</p>
+          <p class="text-gray-600">Xpiri is different. No account. No cloud. No annoying notifications you'll disable in a week. Just add food, get reminded, save money. That's it.</p>
+        </div>
+        <div class="p-6 bg-gray-50 rounded-2xl">
+          <p class="font-semibold text-gray-900 mb-2">"I don't have time to track everything."</p>
+          <p class="text-gray-600">Adding an item takes 5 seconds. And it saves you from throwing away $20 chicken. That's a pretty good trade.</p>
+        </div>
+        <div class="p-6 bg-gray-50 rounded-2xl">
+          <p class="font-semibold text-gray-900 mb-2">"Is my data safe?"</p>
+          <p class="text-gray-600">Your data never leaves your device. No servers. No accounts. No tracking. It's like a private notebook that reminds you stuff.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="cta" class="relative z-10 py-24 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Stop throwing money in the trash.</h2>
+      <p class="text-xl text-gray-500 mb-10 max-w-2xl mx-auto">Track your food. Use it before it expires. Watch your savings grow. Open source. Free forever. Runs offline.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="dashboard.html" class="px-8 py-4 bg-xpiri-green text-white rounded-full font-semibold text-lg hover:bg-xpiri-green/90 transition-all hover:scale-105 shadow-lg text-center">Start Tracking Free</a>
+        <a href="https://github.com/xi-kki/xpiri" class="px-8 py-4 border-2 border-xpiri-green text-xpiri-green rounded-full font-semibold text-lg hover:bg-xpiri-green/5 transition-all text-center">View on GitHub</a>
+      </div>
+      <p class="mt-6 text-sm text-gray-400">No signup. No credit card. Works offline. Your data stays on your device.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="relative z-10 py-12 px-6 bg-white border-t border-gray-100">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl font-bold text-xpiri-green">Xpiri</span>
+          <span class="text-sm text-gray-400">v1.0.0</span>
+        </div>
+        <div class="flex gap-6 text-gray-500">
+          <a href="#" class="hover:text-xpiri-green transition-colors">Docs</a>
+          <a href="https://github.com/xi-kki/xpiri" class="hover:text-xpiri-green transition-colors">GitHub</a>
+          <a href="#" class="hover:text-xpiri-green transition-colors">Discord</a>
+          <a href="#" class="hover:text-xpiri-green transition-colors">Twitter</a>
+        </div>
+        <p class="text-gray-400 text-sm">Never let good food go bad.</p>
+      </div>
+      <div class="mt-8 pt-8 border-t border-gray-100 text-center text-gray-400 text-sm">
+        © 2024 Xpiri. Open source under MIT License.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== SMOOTH VIDEO SCRUB (Eased) =====
+    const video = document.getElementById('bgVideo');
+    let currentScrub = 0;
+    let targetScrub = 0;
+    let isVideoReady = false;
+    const SMOOTHING = 0.06;      // Lower = smoother (0.04-0.10)
+    const SENSITIVITY = 1.5;     // How much mouse movement affects scrub
+    const SCRUB_RANGE = 0.35;    // How much of the video duration to scrub through
+
+    // Wait for video metadata
+    video.addEventListener('loadedmetadata', () => {
+      isVideoReady = true;
+      video.currentTime = video.duration * 0.35; // Start at a nice frame
+    });
+
+    // Track mouse X position (normalized 0-1)
+    document.addEventListener('mousemove', (e) => {
+      const normalizedX = e.clientX / window.innerWidth;
+      targetScrub = (normalizedX - 0.5) * SENSITIVITY;
+    });
+
+    // Smooth animation loop with easing
+    function animate() {
+      if (isVideoReady && video.duration) {
+        // Ease toward target (exponential decay)
+        currentScrub += (targetScrub - currentScrub) * SMOOTHING;
+        
+        // Clamp and calculate time
+        const clampedScrub = Math.max(-1, Math.min(1, currentScrub));
+        const baseTime = video.duration * 0.35;
+        const offset = clampedScrub * video.duration * SCRUB_RANGE;
+        const targetTime = Math.max(0, Math.min(video.duration, baseTime + offset));
+        
+        // Only update if moved enough (reduces micro-jitter)
+        if (Math.abs(video.currentTime - targetTime) > 0.015) {
+          video.currentTime = targetTime;
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    // ===== TYPEWRITER =====
+    const text = "You bought it with good intentions. Now it's rotting in the back of your fridge. Sound familiar?";
+    const typedText = document.getElementById('typed-text');
+    const buttons = document.getElementById('buttons');
+    let i = 0;
+
+    setTimeout(() => {
+      const interval = setInterval(() => {
+        if (i < text.length) {
+          typedText.textContent += text.charAt(i);
+          i++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 38);
+    }, 600);
+
+    // Show buttons after delay
+    setTimeout(() => {
+      buttons.classList.remove('opacity-0', 'translate-y-2');
+      buttons.classList.add('opacity-100', 'translate-y-0');
+    }, 400);
+
+    // Copy email
+    function copyEmail() {
+      navigator.clipboard.writeText('hello@xpiri.ai');
+      alert('Email copied!');
+    }
+  </script>
+</body>
+</html>
