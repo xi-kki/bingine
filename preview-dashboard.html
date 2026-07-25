@@ -82,7 +82,7 @@
         </div>
 
         <div id="empty-state" class="bg-white p-12 rounded-2xl text-center hidden">
-          <p class="text-6xl mb-4">🥗</p>
+          <p class="text-6xl mb-4"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z"/><path d="M12 6v6l4 2"/></svg></p>
           <h3 class="text-xl font-semibold text-gray-900 mb-2">Your kitchen is empty</h3>
           <p class="text-gray-500 mb-6">Add your first food item to start tracking</p>
           <button onclick="openModal()" class="bg-xpiri-green text-white px-6 py-3 rounded-full font-semibold hover:bg-xpiri-green/90">
@@ -95,7 +95,7 @@
       <div class="space-y-6">
         <!-- Recipe Suggestions -->
         <div class="bg-white p-6 rounded-2xl shadow-sm">
-          <h3 class="font-semibold text-gray-900 mb-4">🍳 Recipe Ideas</h3>
+          <h3 class="font-semibold text-gray-900 mb-4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="inline"><path d="M15 11h.01M11 15h.01M16 16c1 0 2.77-.56 4-2M6 12a4 4 0 1 1 8 0c0 2-1 3-2 4h-4c-1-1-2-2-2-4z"/></svg> Recipe Ideas</h3>
           <div id="recipes-list">
             <p class="text-gray-500 text-sm">No items expiring soon. Add items to get recipe suggestions!</p>
           </div>
@@ -103,7 +103,7 @@
 
         <!-- Waste Stats -->
         <div class="bg-white p-6 rounded-2xl shadow-sm">
-          <h3 class="font-semibold text-gray-900 mb-4">📊 Waste Stats</h3>
+          <h3 class="font-semibold text-gray-900 mb-4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="inline"><path d="M18 20V10M12 20V4M6 20v-6"/></svg> Waste Stats</h3>
           <div class="space-y-3">
             <div class="flex justify-between items-center">
               <span class="text-gray-500 text-sm">Waste Rate</span>
@@ -143,15 +143,15 @@
         <div>
           <label class="block text-sm font-medium text-gray-700 mb-1">Category</label>
           <select id="input-category" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-xpiri-green">
-            <option value="vegetables">🥬 Vegetables</option>
-            <option value="fruits">🍎 Fruits</option>
-            <option value="meat">🥩 Meat & Fish</option>
-            <option value="dairy">🧀 Dairy</option>
-            <option value="grains">🍞 Grains & Bread</option>
-            <option value="beverages">🥤 Beverages</option>
-            <option value="condiments">🫙 Condiments</option>
-            <option value="snacks">🍿 Snacks</option>
-            <option value="other" selected>📦 Other</option>
+            <option value="vegetables">Vegetables</option>
+            <option value="fruits">Fruits</option>
+            <option value="meat">Meat & Fish</option>
+            <option value="dairy">Dairy</option>
+            <option value="grains">Grains & Bread</option>
+            <option value="beverages">Beverages</option>
+            <option value="condiments">Condiments</option>
+            <option value="snacks">Snacks</option>
+            <option value="other" selected>Other</option>
           </select>
         </div>
         <div>
@@ -174,15 +174,15 @@
   <script>
     // Data
     const CATEGORIES = {
-      vegetables: { label: 'Vegetables', icon: '🥬' },
-      fruits: { label: 'Fruits', icon: '🍎' },
-      meat: { label: 'Meat & Fish', icon: '🥩' },
-      dairy: { label: 'Dairy', icon: '🧀' },
-      grains: { label: 'Grains & Bread', icon: '🍞' },
-      beverages: { label: 'Beverages', icon: '🥤' },
-      condiments: { label: 'Condiments', icon: '🫙' },
-      snacks: { label: 'Snacks', icon: '🍿' },
-      other: { label: 'Other', icon: '📦' },
+      vegetables: { label: 'Vegetables', icon: 'leaf' },
+      fruits: { label: 'Fruits', icon: 'apple' },
+      meat: { label: 'Meat & Fish', icon: 'steak' },
+      dairy: { label: 'Dairy', icon: 'cheese' },
+      grains: { label: 'Grains & Bread', icon: 'wheat' },
+      beverages: { label: 'Beverages', icon: 'coffee' },
+      condiments: { label: 'Condiments', icon: 'jar' },
+      snacks: { label: 'Snacks', icon: 'cookie' },
+      other: { label: 'Other', icon: 'package' },
     };
 
     const RECIPES = {
@@ -296,7 +296,7 @@
       document.getElementById('waste-rate').textContent = wasteRate + '%';
       document.getElementById('waste-bar').style.width = wasteRate + '%';
       
-      const wasteMsg = wasteRate <= 10 ? '🎉 Great job minimizing waste!' :
+      const wasteMsg = wasteRate <= 10 ? '✨ Great job minimizing waste!' :
                       wasteRate <= 25 ? '👍 Not bad, room for improvement' :
                       '⚠️ Consider using items before they expire';
       document.getElementById('waste-message').textContent = total > 0 ? wasteMsg : 'Add items to track your waste rate';

@@ -1,14 +1,14 @@
-# 🍎 Xpiri
+# 🍎 Bingine
 
 **Never let good food go bad.**
 
-Xpiri is an offline AI agent for food waste tracking. Track your ingredients, get expiry alerts, and receive recipe suggestions — all running locally on your device.
+Bingine is an offline AI agent for food waste tracking. Track your ingredients, get expiry alerts, and receive recipe suggestions — all running locally on your device.
 
-![Xpiri](preview.png)
+![Bingine](preview.png)
 
 ## ✨ Features
 
-- 🧠 **Smart Expiry Tracking** — Xpiri remembers every ingredient and its expiry date
+- 🧠 **Smart Expiry Tracking** — Bingine remembers every ingredient and its expiry date
 - 🍳 **Recipe Suggestions** — Get recipe ideas based on what's about to expire
 - 📱 **Instant Alerts** — Telegram, WhatsApp, SMS notifications
 - 🔒 **100% Offline** — Your data stays on your device. No cloud, no tracking
@@ -25,8 +25,8 @@ Just open `dist/index.html` in your browser. Works immediately!
 
 ```bash
 # Clone the repo
-git clone https://github.com/xi-kki/xpiri.git
-cd xpiri
+git clone https://github.com/xi-kki/bingine.git
+cd bingine
 
 # Install dependencies
 npm install
@@ -51,7 +51,7 @@ Open [http://localhost:3000](http://localhost:3000)
 ## 📁 Project Structure
 
 ```
-xpiri/
+bingine/
 ├── src/
 │   ├── app/
 │   │   ├── page.tsx          # Landing page
@@ -89,6 +89,10 @@ xpiri/
 2. **Track expiry** — Xpiri automatically tracks expiry status
 3. **Get recipes** — See recipe suggestions for expiring items
 4. **Save money** — Watch your waste rate go down
+
+## 🌍 Demo
+
+Live: [bingine.vercel.app](https://bingine.vercel.app)
 
 ## 🔒 Privacy
 

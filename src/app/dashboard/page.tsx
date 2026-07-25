@@ -283,7 +283,7 @@ export default function Dashboard() {
                   />
                 </div>
                 <p className="text-xs text-gray-500">
-                  {analytics.wasteRate <= 10 ? '🎉 Great job minimizing waste!' :
+                  {analytics.wasteRate <= 10 ? '✨ Great job minimizing waste!' :
                    analytics.wasteRate <= 25 ? '👍 Not bad, room for improvement' :
                    '⚠️ Consider using items before they expire'}
                 </p>

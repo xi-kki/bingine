@@ -1,6 +1,6 @@
 'use client'
 
-import { Plus, Brain, Bell, TrendingUp } from '@phosphor-icons/react'
+import { Plus, Brain, Bell, TrendingUp, Smartphone, ChartBar } from '@phosphor-icons/react'
 
 const steps = [
   {
@@ -22,14 +22,14 @@ const steps = [
     icon: <Bell className="w-8 h-8 text-white" weight="duotone" />,
     title: 'Get smart alerts',
     description: 'When something is about to expire, Xpiri notifies you with recipe ideas and action options.',
-    example: '📱 "Chicken expires tomorrow! Try this 15-min stir-fry recipe"',
+    example: '<SmartPhone /> "Chicken expires tomorrow! Try this 15-min stir-fry recipe"',
   },
   {
     number: '04',
     icon: <TrendingUp className="w-8 h-8 text-white" weight="duotone" />,
     title: 'Reduce waste, save money',
     description: 'Track your progress over time. See how much food and money you\'ve saved.',
-    example: '📊 "This month: 34% less waste, $420 saved"',
+    example: '<ChartBar /> "This month: 34% less waste, $420 saved"',
   },
 ]
 

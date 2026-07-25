@@ -1,6 +1,6 @@
 'use client'
 
-import { Leaf, Github, ArrowRight } from '@phosphor-icons/react'
+import { Leaf, Github, ArrowRight, Star, MessageCircle, Twitter } from '@phosphor-icons/react'
 
 export default function CTA() {
   return (
@@ -28,9 +28,9 @@ export default function CTA() {
 
         {/* Social proof */}
         <div className="mt-12 flex flex-wrap justify-center gap-8 text-white/60 text-sm">
-          <span>⭐ Star us on GitHub</span>
-          <span>💬 Join our Discord</span>
-          <span>🐦 Follow @XpiriAI</span>
+          <span className="flex items-center gap-2"><Star className="w-4 h-4" weight="fill" /> Star us on GitHub</span>
+          <span className="flex items-center gap-2"><MessageCircle className="w-4 h-4" weight="duotone" /> Join our Discord</span>
+          <span className="flex items-center gap-2"><Twitter className="w-4 h-4" weight="duotone" /> Follow @XpiriAI</span>
         </div>
       </div>
     </section>

@@ -44,7 +44,7 @@ export default function Home() {
     let currentScrub = 0
     let targetScrub = 0
     let isVideoReady = false
-    const SMOOTHING = 0.06 // Lower = smoother
+    const SMOOTHING = 0.03 // Lower = smoother (0.03 = buttery smooth)
     const SENSITIVITY = 1.5
     const SCRUB_RANGE = 0.35
 
@@ -232,35 +232,14 @@ export default function Home() {
             }`}
             style={{ transition: 'opacity 0.4s ease, transform 0.4s ease' }}
           >
-            {/* White Pill Buttons */}
-            {[
-              { label: 'Track Your Kitchen', href: '/dashboard', icon: <span className="w-2 h-2 bg-xpiri-green rounded-full" /> },
-              { label: 'View on GitHub', href: 'https://github.com/xi-kki/xpiri', icon: <Github className="w-4 h-4" weight="duotone" /> },
-              { label: 'Join Discord', href: '#', icon: <MessageCircle className="w-4 h-4" weight="duotone" /> },
-              { label: 'Read the Docs', href: '#', icon: <BookOpen className="w-4 h-4" weight="duotone" /> },
-            ].map((btn) => (
-              <a
-                key={btn.label}
-                href={btn.href}
-                className="inline-flex items-center justify-center bg-white text-black border border-black/10 rounded-full text-[13px] sm:text-[15px] px-4 sm:px-5 py-[0.3em] mx-[0.2em] mb-[0.4em] whitespace-nowrap hover:bg-black hover:text-white transition-colors duration-200 gap-2"
-                style={{ fontFamily: 'var(--font-body)' }}
-              >
-                {btn.icon}
-                {btn.label}
-              </a>
-            ))}
-
-            {/* Outline Copy Button */}
-            <button
-              onClick={copyEmail}
-              className="inline-flex items-center justify-center text-white bg-transparent border border-white rounded-full text-[13px] sm:text-[15px] px-4 sm:px-5 py-[0.3em] mx-[0.2em] mb-[0.4em] whitespace-nowrap hover:bg-white hover:text-black transition-colors duration-200 gap-2 sm:gap-3"
+            {/* Single CTA Button */}
+            <a
+              href="/dashboard"
+              className="inline-flex items-center justify-center bg-white text-black border border-black/10 rounded-full text-[13px] sm:text-[15px] px-4 sm:px-5 py-[0.3em] mx-[0.2em] mb-[0.4em] whitespace-nowrap hover:bg-black hover:text-white transition-colors duration-200"
               style={{ fontFamily: 'var(--font-body)' }}
             >
-              <span>
-                Reach us: <span className="underline underline-offset-1">hello@xpiri.ai</span>
-              </span>
-              <Copy className="w-4 h-4" weight="duotone" />
-            </button>
+              Start Tracking Free
+            </a>
           </div>
         </div>
       </section>

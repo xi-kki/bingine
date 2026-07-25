@@ -22,15 +22,15 @@ export type FoodCategory =
   | 'other'
 
 export const CATEGORIES: { value: FoodCategory; label: string; icon: string }[] = [
-  { value: 'vegetables', label: 'Vegetables', icon: '🥬' },
-  { value: 'fruits', label: 'Fruits', icon: '🍎' },
-  { value: 'meat', label: 'Meat & Fish', icon: '🥩' },
-  { value: 'dairy', label: 'Dairy', icon: '🧀' },
-  { value: 'grains', label: 'Grains & Bread', icon: '🍞' },
-  { value: 'beverages', label: 'Beverages', icon: '🥤' },
-  { value: 'condiments', label: 'Condiments', icon: '🫙' },
-  { value: 'snacks', label: 'Snacks', icon: '🍿' },
-  { value: 'other', label: 'Other', icon: '📦' },
+  { value: 'vegetables', label: 'Vegetables', icon: 'leaf' },
+  { value: 'fruits', label: 'Fruits', icon: 'apple' },
+  { value: 'meat', label: 'Meat & Fish', icon: 'steak' },
+  { value: 'dairy', label: 'Dairy', icon: 'cheese' },
+  { value: 'grains', label: 'Grains & Bread', icon: 'wheat' },
+  { value: 'beverages', label: 'Beverages', icon: 'coffee' },
+  { value: 'condiments', label: 'Condiments', icon: 'jar' },
+  { value: 'snacks', label: 'Snacks', icon: 'cookie' },
+  { value: 'other', label: 'Other', icon: 'package' },
 ]
 
 const STORAGE_KEY = 'xpiri-food-items'

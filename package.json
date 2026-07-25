@@ -1,8 +1,8 @@
 {
-  "name": "xpiri",
+  "name": "bingine",
   "version": "1.0.0",
   "private": true,
-  "description": "Xpiri - Never let good food go bad. Offline AI agent for food waste tracking.",
+  "description": "Bingine - Never let good food go bad. Offline AI agent for food waste tracking.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

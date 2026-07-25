@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Xpiri — Never Let Good Food Go Bad</title>
+  <title>Bingine , Offline AI Agent for Food Waste Tracking</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            'xpiri-green': '#2D5A27',
-            'xpiri-fresh': '#4CAF50',
-            'xpiri-warning': '#FF9800',
-            'xpiri-danger': '#F44336',
+            'bingine-green': '#2D5A27',
+            'bingine-fresh': '#4CAF50',
+            'bingine-warning': '#FF9800',
+            'bingine-danger': '#F44336',
           }
         }
       }
@@ -62,8 +62,7 @@
   <!-- Navbar -->
   <nav class="fixed top-0 left-0 right-0 z-10 px-5 sm:px-8 py-4 sm:py-5 flex justify-between items-center">
     <div class="flex items-center gap-3">
-      <span class="text-[21px] sm:text-[26px] tracking-tight text-black" style="font-family: var(--font-heading);">Xpiri</span>
-      <span class="text-[25px] sm:text-[30px] text-black select-none" style="letter-spacing: -0.02em;">✳︎</span>
+      <span class="text-[21px] sm:text-[26px] tracking-tight text-black" style="font-family: var(--font-heading);">Bingine</span>
     </div>
     <div class="hidden md:flex items-center gap-2 text-[23px] text-black">
       <a href="#features" class="hover:opacity-60 transition-opacity">Features</a>
@@ -71,8 +70,6 @@
       <a href="#how-it-works" class="hover:opacity-60 transition-opacity">How It Works</a>
       <span class="opacity-40">,</span>
       <a href="#pricing" class="hover:opacity-60 transition-opacity">Pricing</a>
-      <span class="opacity-40">,</span>
-      <a href="https://github.com/xi-kki/xpiri" class="hover:opacity-60 transition-opacity">GitHub</a>
     </div>
     <a href="dashboard.html" class="hidden md:block text-[23px] text-black underline underline-offset-2 hover:opacity-60 transition-opacity">Get Started</a>
   </nav>
@@ -81,10 +78,8 @@
   <section class="relative z-1 h-screen flex flex-col justify-end pb-12 md:justify-center md:pb-0 px-5 sm:px-8 md:px-10 overflow-hidden">
     <div class="max-w-xl relative z-10">
       <!-- Blurred Intro Label -->
-      <div class="pointer-events-none select-none mb-5 sm:mb-6" style="filter: blur(4px);">
-        <p class="text-black font-normal" style="font-family: var(--font-body); font-size: clamp(18px, 4vw, 26px); line-height: 1.3;">
-          You opened the fridge. Again. And there it is — that bag of spinach you bought with good intentions, now a slimy science experiment.
-        </p>
+      <div class="pointer-events-none select-none mb-5 sm:mb-6" style="filter: blur(2px);">
+        <p class="text-black font-normal" style="font-family: var(--font-body); font-size: clamp(18px, 4vw, 26px); line-height: 1.3;">$2,400 a year. In the trash. Every year.</p>
       </div>
 
       <!-- Typewriter Text -->
@@ -97,173 +92,156 @@
         <a href="dashboard.html" class="inline-flex items-center justify-center bg-white text-black border border-black/10 rounded-full text-[13px] sm:text-[15px] px-4 sm:px-5 py-[0.3em] mx-[0.2em] mb-[0.4em] whitespace-nowrap hover:bg-black hover:text-white transition-colors duration-200">
           Start Tracking Free
         </a>
-        <a href="https://github.com/xi-kki/xpiri" class="inline-flex items-center justify-center bg-white text-black border border-black/10 rounded-full text-[13px] sm:text-[15px] px-4 sm:px-5 py-[0.3em] mx-[0.2em] mb-[0.4em] whitespace-nowrap hover:bg-black hover:text-white transition-colors duration-200">
-          View on GitHub
-        </a>
-        <a href="#" class="inline-flex items-center justify-center bg-white text-black border border-black/10 rounded-full text-[13px] sm:text-[15px] px-4 sm:px-5 py-[0.3em] mx-[0.2em] mb-[0.4em] whitespace-nowrap hover:bg-black hover:text-white transition-colors duration-200">
-          Join Discord
-        </a>
-        <a href="#" class="inline-flex items-center justify-center bg-white text-black border border-black/10 rounded-full text-[13px] sm:text-[15px] px-4 sm:px-5 py-[0.3em] mx-[0.2em] mb-[0.4em] whitespace-nowrap hover:bg-black hover:text-white transition-colors duration-200">
-          Read the Docs
-        </a>
-        <button onclick="copyEmail()" class="inline-flex items-center justify-center text-white bg-transparent border border-white rounded-full text-[13px] sm:text-[15px] px-4 sm:px-5 py-[0.3em] mx-[0.2em] mb-[0.4em] whitespace-nowrap hover:bg-white hover:text-black transition-colors duration-200 gap-2 sm:gap-3">
-          <span>Reach us: <span class="underline underline-offset-1">hello@xpiri.ai</span></span>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-          </svg>
-        </button>
       </div>
     </div>
   </section>
 
-  <!-- Pain Point Section — The "You Know This Feeling" -->
+  <!-- Pain Point Section , The "You Know This Feeling" -->
   <section class="relative z-10 py-20 px-6 bg-white">
     <div class="max-w-4xl mx-auto text-center">
       <p class="text-sm uppercase tracking-widest text-gray-400 mb-8">Sound familiar?</p>
       <div class="grid md:grid-cols-3 gap-8">
         <div class="p-6">
-          <span class="text-5xl mb-4 block">🥬</span>
+          <div class="mb-4 flex items-center justify-center text-gray-900"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z"/><path d="M12 6v6l4 2"/></svg></div>
           <p class="text-lg text-gray-600 leading-relaxed">"I bought spinach last week and it's already slimy in the back of the fridge."</p>
         </div>
         <div class="p-6">
-          <span class="text-5xl mb-4 block">💸</span>
+          <div class="mb-4 flex items-center justify-center text-gray-900"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
           <p class="text-lg text-gray-600 leading-relaxed">"I throw away $200+ of groceries every month. That's $2,400 a year in the trash."</p>
         </div>
         <div class="p-6">
-          <span class="text-5xl mb-4 block">🤯</span>
+          <div class="mb-4 flex items-center justify-center text-gray-900"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div>
           <p class="text-lg text-gray-600 leading-relaxed">"I have no idea what's in my fridge until it's too late."</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- The Problem — Why This Happens -->
+  <!-- The Problem , Why This Happens -->
   <section class="relative z-10 py-20 px-6 bg-gray-50">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">You're not bad at cooking. You're bad at remembering.</h2>
       <p class="text-xl text-gray-500 leading-relaxed">
         Life gets busy. Groceries get buried. Expiration dates sneak up. And suddenly, that $8 chicken is a $8 biohazard. 
-        <strong class="text-gray-700">It's not your fault — it's a memory problem.</strong> And Xpiri solves it.
+        <strong class="text-gray-700">It's not your fault , it's a memory problem.</strong> And Bingine solves it.
       </p>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section id="features" class="relative z-10 py-24 px-6 bg-white">
-    <div class="max-w-6xl mx-auto">
+  <!-- The Solution , What Bingine Does -->
+  <section class="relative z-10 py-20 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
       <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Stop the waste. Start saving.</h2>
-        <p class="text-xl text-gray-500 max-w-2xl mx-auto">Xpiri tracks your food, reminds you before it expires, and suggests recipes to use what you have. All offline. All private.</p>
+        <p class="text-sm uppercase tracking-widest text-bingine-green mb-4">Introducing Bingine</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Your offline AI agent for food waste tracking.</h2>
+        <p class="text-xl text-gray-500 max-w-2xl mx-auto">
+          Bingine remembers every ingredient in your kitchen, tracks expiry dates, and sends you smart alerts with recipe ideas , before your food goes bad. <strong class="text-gray-700">100% offline. No cloud. No accounts. Your data stays on your device.</strong>
+        </p>
       </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="p-8 rounded-2xl border border-gray-100 hover:border-xpiri-fresh/30 hover:shadow-lg transition-all group">
-          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🧠</div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Never Forget Again</h3>
-          <p class="text-gray-500 leading-relaxed">Xpiri remembers every item, every expiry date. No more "oh no, that's expired?" moments at 11pm.</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Feature 1 -->
+        <div class="p-6 rounded-2xl bg-gray-50 hover:bg-bingine-green/5 transition-colors group">
+          <div class="mb-4 flex items-center justify-center text-gray-900"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z"/><path d="M12 6v6l4 2"/></svg></div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2 text-center">Smart Expiry Tracking</h3>
+          <p class="text-gray-500 text-center">Add items once. Bingine tracks freshness and alerts you before anything expires.</p>
         </div>
-        <div class="p-8 rounded-2xl border border-gray-100 hover:border-xpiri-fresh/30 hover:shadow-lg transition-all group">
-          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🍳</div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Use It Before You Lose It</h3>
-          <p class="text-gray-500 leading-relaxed">Get recipe ideas for what's about to expire. Turn "oops" into "yum."</p>
+
+        <!-- Feature 2 -->
+        <div class="p-6 rounded-2xl bg-gray-50 hover:bg-bingine-green/5 transition-colors group">
+          <div class="mb-4 flex items-center justify-center text-gray-900"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 11h.01M11 15h.01M16 16c1 0 2.77-.56 4-2M6 12a4 4 0 1 1 8 0c0 2-1 3-2 4h-4c-1-1-2-2-2-4z"/></svg></div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2 text-center">Recipe Suggestions</h3>
+          <p class="text-gray-500 text-center">Get recipe ideas based on what's about to expire. No more "what's for dinner?" panic.</p>
         </div>
-        <div class="p-8 rounded-2xl border border-gray-100 hover:border-xpiri-fresh/30 hover:shadow-lg transition-all group">
-          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">📱</div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Smart Alerts Before It's Too Late</h3>
-          <p class="text-gray-500 leading-relaxed">Telegram, WhatsApp, SMS — get notified before food goes bad. Not after.</p>
+
+        <!-- Feature 3 -->
+        <div class="p-6 rounded-2xl bg-gray-50 hover:bg-bingine-green/5 transition-colors group">
+          <div class="mb-4 flex items-center justify-center text-gray-900"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg></div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2 text-center">Instant Alerts</h3>
+          <p class="text-gray-500 text-center">Telegram, WhatsApp, SMS , get notified before food goes bad. Not after.</p>
         </div>
-        <div class="p-8 rounded-2xl border border-gray-100 hover:border-xpiri-fresh/30 hover:shadow-lg transition-all group">
-          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🔒</div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">100% Private</h3>
-          <p class="text-gray-500 leading-relaxed">Your data stays on your device. No cloud. No tracking. Your kitchen, your business.</p>
+
+        <!-- Feature 4 -->
+        <div class="p-6 rounded-2xl bg-gray-50 hover:bg-bingine-green/5 transition-colors group">
+          <div class="mb-4 flex items-center justify-center text-gray-900"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2 text-center">100% Offline</h3>
+          <p class="text-gray-500 text-center">No cloud. No accounts. No tracking. Your kitchen data stays on your device.</p>
         </div>
-        <div class="p-8 rounded-2xl border border-gray-100 hover:border-xpiri-fresh/30 hover:shadow-lg transition-all group">
-          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">📊</div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Watch Your Savings Grow</h3>
-          <p class="text-gray-500 leading-relaxed">Track how much food and money you've saved. Seeing the numbers feels good.</p>
+
+        <!-- Feature 5 -->
+        <div class="p-6 rounded-2xl bg-gray-50 hover:bg-bingine-green/5 transition-colors group">
+          <div class="mb-4 flex items-center justify-center text-gray-900"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2 text-center">Waste Analytics</h3>
+          <p class="text-gray-500 text-center">Track your waste reduction over time. See how much food and money you've saved.</p>
         </div>
-        <div class="p-8 rounded-2xl border border-gray-100 hover:border-xpiri-fresh/30 hover:shadow-lg transition-all group">
-          <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">🌱</div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Do Good Too</h3>
-          <p class="text-gray-500 leading-relaxed">Route near-expiry items to food banks. Less waste, more help.</p>
+
+        <!-- Feature 6 -->
+        <div class="p-6 rounded-2xl bg-gray-50 hover:bg-bingine-green/5 transition-colors group">
+          <div class="mb-4 flex items-center justify-center text-gray-900"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 20h10M12 20v-8M12 12l-4-4M12 12l4-4"/></svg></div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2 text-center">Donate & Compost</h3>
+          <p class="text-gray-500 text-center">Route near-expiry items to food banks or compost. Reduce waste, help the planet.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- How It Works -->
-  <section id="how-it-works" class="relative z-10 py-24 px-6 bg-gray-50">
-    <div class="max-w-6xl mx-auto">
+  <section id="how-it-works" class="relative z-10 py-20 px-6 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
       <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Three steps. Zero waste.</h2>
-        <p class="text-xl text-gray-500 max-w-2xl mx-auto">No complicated setup. No cloud. Just you and your kitchen.</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How Bingine works</h2>
+        <p class="text-xl text-gray-500">Three steps. Zero learning curve.</p>
       </div>
+
       <div class="space-y-8">
-        <div class="flex flex-col md:flex-row items-start gap-8 p-8 rounded-2xl bg-white hover:shadow-md transition-shadow">
-          <div class="flex-shrink-0 w-16 h-16 bg-xpiri-green text-white rounded-2xl flex items-center justify-center text-2xl font-bold">01</div>
-          <div class="flex-1">
-            <h3 class="text-2xl font-semibold text-gray-900 mb-2">Add what you have</h3>
-            <p class="text-gray-500 text-lg mb-4">Quick add items as you unpack groceries. Name, quantity, expiry — done in seconds.</p>
-            <div class="inline-block px-4 py-2 bg-xpiri-green/5 text-xpiri-green rounded-lg font-mono text-sm">"5kg chicken breast, expires July 28"</div>
+        <!-- Step 1 -->
+        <div class="flex flex-col md:flex-row items-start gap-6 p-6 rounded-2xl bg-white">
+          <div class="flex-shrink-0 w-12 h-12 bg-bingine-green text-white rounded-xl flex items-center justify-center font-bold text-lg">1</div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Add your ingredients</h3>
+            <p class="text-gray-500">Quick add items as you unpack groceries. Name, quantity, expiry , done in seconds.</p>
           </div>
         </div>
-        <div class="flex flex-col md:flex-row items-start gap-8 p-8 rounded-2xl bg-white hover:shadow-md transition-shadow">
-          <div class="flex-shrink-0 w-16 h-16 bg-xpiri-green text-white rounded-2xl flex items-center justify-center text-2xl font-bold">02</div>
-          <div class="flex-1">
-            <h3 class="text-2xl font-semibold text-gray-900 mb-2">Xpiri watches your back</h3>
-            <p class="text-gray-500 text-lg mb-4">We'll remind you before things expire — with recipe ideas. No more "what's for dinner?" panic.</p>
-            <div class="inline-block px-4 py-2 bg-xpiri-green/5 text-xpiri-green rounded-lg font-mono text-sm">📱 "Chicken expires tomorrow! Try this 15-min stir-fry"</div>
+
+        <!-- Step 2 -->
+        <div class="flex flex-col md:flex-row items-start gap-6 p-6 rounded-2xl bg-white">
+          <div class="flex-shrink-0 w-12 h-12 bg-bingine-green text-white rounded-xl flex items-center justify-center font-bold text-lg">2</div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Bingine tracks & reminds you</h3>
+            <p class="text-gray-500">We'll remind you before things expire , with recipe ideas. No more "what's for dinner?" panic.</p>
+            <div class="inline-block px-4 py-2 bg-bingine-green/5 text-bingine-green rounded-lg font-mono text-sm mt-3"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg> "Chicken expires tomorrow! Try this 15-min stir-fry"</div>
           </div>
         </div>
-        <div class="flex flex-col md:flex-row items-start gap-8 p-8 rounded-2xl bg-white hover:shadow-md transition-shadow">
-          <div class="flex-shrink-0 w-16 h-16 bg-xpiri-green text-white rounded-2xl flex items-center justify-center text-2xl font-bold">03</div>
-          <div class="flex-1">
-            <h3 class="text-2xl font-semibold text-gray-900 mb-2">Save money. Feel good.</h3>
-            <p class="text-gray-500 text-lg mb-4">Watch your waste go down and your savings go up. That's money back in your pocket.</p>
-            <div class="inline-block px-4 py-2 bg-xpiri-green/5 text-xpiri-green rounded-lg font-mono text-sm">📊 "This month: 34% less waste, $420 saved"</div>
+
+        <!-- Step 3 -->
+        <div class="flex flex-col md:flex-row items-start gap-6 p-6 rounded-2xl bg-white">
+          <div class="flex-shrink-0 w-12 h-12 bg-bingine-green text-white rounded-xl flex items-center justify-center font-bold text-lg">3</div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Save money, reduce waste</h3>
+            <p class="text-gray-500">Track your progress over time. See how much food and money you've saved.</p>
+            <div class="inline-block px-4 py-2 bg-bingine-green/5 text-bingine-green rounded-lg font-mono text-sm mt-3"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="inline"><path d="M18 20V10M12 20V4M6 20v-6"/></svg> "This month: 34% less waste, $420 saved"</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- The Numbers — Social Proof / Urgency -->
-  <section class="relative z-10 py-16 px-6 bg-xpiri-green">
+  <!-- The Numbers , Social Proof / Urgency -->
+  <section class="relative z-10 py-20 px-6 bg-bingine-green">
     <div class="max-w-4xl mx-auto text-center">
-      <p class="text-white/70 text-sm uppercase tracking-widest mb-8">The food waste problem is massive</p>
-      <div class="grid md:grid-cols-3 gap-8 text-white">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-12">The food waste problem is real.</h2>
+      <div class="grid md:grid-cols-3 gap-8">
         <div>
-          <p class="text-5xl font-bold mb-2">1.3B</p>
-          <p class="text-white/80">tons of food wasted globally each year</p>
-        </div>
-        <div>
-          <p class="text-5xl font-bold mb-2">$1,500</p>
-          <p class="text-white/80">average family wastes per year on groceries</p>
+          <p class="text-5xl font-bold text-white mb-2">1.3B</p>
+          <p class="text-white/70">tons of food wasted globally every year</p>
         </div>
         <div>
-          <p class="text-5xl font-bold mb-2">8-10%</p>
-          <p class="text-white/80">of global greenhouse gas comes from food waste</p>
+          <p class="text-5xl font-bold text-white mb-2">$2,400</p>
+          <p class="text-white/70">average family throws away per year</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Objection Demolition -->
-  <section class="relative z-10 py-20 px-6 bg-white">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">But wait...</h2>
-      <div class="space-y-6">
-        <div class="p-6 bg-gray-50 rounded-2xl">
-          <p class="font-semibold text-gray-900 mb-2">"I've tried apps before. They never stick."</p>
-          <p class="text-gray-600">Xpiri is different. No account. No cloud. No annoying notifications you'll disable in a week. Just add food, get reminded, save money. That's it.</p>
-        </div>
-        <div class="p-6 bg-gray-50 rounded-2xl">
-          <p class="font-semibold text-gray-900 mb-2">"I don't have time to track everything."</p>
-          <p class="text-gray-600">Adding an item takes 5 seconds. And it saves you from throwing away $20 chicken. That's a pretty good trade.</p>
-        </div>
-        <div class="p-6 bg-gray-50 rounded-2xl">
-          <p class="font-semibold text-gray-900 mb-2">"Is my data safe?"</p>
-          <p class="text-gray-600">Your data never leaves your device. No servers. No accounts. No tracking. It's like a private notebook that reminds you stuff.</p>
+        <div>
+          <p class="text-5xl font-bold text-white mb-2">40%</p>
+          <p class="text-white/70">of all food produced is never eaten</p>
         </div>
       </div>
     </div>
@@ -275,8 +253,7 @@
       <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Stop throwing money in the trash.</h2>
       <p class="text-xl text-gray-500 mb-10 max-w-2xl mx-auto">Track your food. Use it before it expires. Watch your savings grow. Open source. Free forever. Runs offline.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="dashboard.html" class="px-8 py-4 bg-xpiri-green text-white rounded-full font-semibold text-lg hover:bg-xpiri-green/90 transition-all hover:scale-105 shadow-lg text-center">Start Tracking Free</a>
-        <a href="https://github.com/xi-kki/xpiri" class="px-8 py-4 border-2 border-xpiri-green text-xpiri-green rounded-full font-semibold text-lg hover:bg-xpiri-green/5 transition-all text-center">View on GitHub</a>
+        <a href="dashboard.html" class="px-8 py-4 bg-bingine-green text-white rounded-full font-semibold text-lg hover:bg-bingine-green/90 transition-all hover:scale-105 shadow-lg text-center">Start Tracking Free</a>
       </div>
       <p class="mt-6 text-sm text-gray-400">No signup. No credit card. Works offline. Your data stays on your device.</p>
     </div>
@@ -287,19 +264,18 @@
     <div class="max-w-6xl mx-auto">
       <div class="flex flex-col md:flex-row justify-between items-center gap-6">
         <div class="flex items-center gap-2">
-          <span class="text-2xl font-bold text-xpiri-green">Xpiri</span>
+          <span class="text-2xl font-bold text-bingine-green">Bingine</span>
           <span class="text-sm text-gray-400">v1.0.0</span>
         </div>
         <div class="flex gap-6 text-gray-500">
-          <a href="#" class="hover:text-xpiri-green transition-colors">Docs</a>
-          <a href="https://github.com/xi-kki/xpiri" class="hover:text-xpiri-green transition-colors">GitHub</a>
-          <a href="#" class="hover:text-xpiri-green transition-colors">Discord</a>
-          <a href="#" class="hover:text-xpiri-green transition-colors">Twitter</a>
+          <a href="#" class="hover:text-bingine-green transition-colors">Docs</a>
+          <a href="#" class="hover:text-bingine-green transition-colors">Discord</a>
+          <a href="#" class="hover:text-bingine-green transition-colors">Twitter</a>
         </div>
         <p class="text-gray-400 text-sm">Never let good food go bad.</p>
       </div>
       <div class="mt-8 pt-8 border-t border-gray-100 text-center text-gray-400 text-sm">
-        © 2024 Xpiri. Open source under MIT License.
+        &copy; 2024 Bingine. Open source under MIT License.
       </div>
     </div>
   </footer>
@@ -310,35 +286,27 @@
     let currentScrub = 0;
     let targetScrub = 0;
     let isVideoReady = false;
-    const SMOOTHING = 0.06;      // Lower = smoother (0.04-0.10)
-    const SENSITIVITY = 1.5;     // How much mouse movement affects scrub
-    const SCRUB_RANGE = 0.35;    // How much of the video duration to scrub through
+    const SMOOTHING = 0.03;
+    const SENSITIVITY = 1.5;
+    const SCRUB_RANGE = 0.35;
 
-    // Wait for video metadata
     video.addEventListener('loadedmetadata', () => {
       isVideoReady = true;
-      video.currentTime = video.duration * 0.35; // Start at a nice frame
+      video.currentTime = video.duration * 0.35;
     });
 
-    // Track mouse X position (normalized 0-1)
     document.addEventListener('mousemove', (e) => {
       const normalizedX = e.clientX / window.innerWidth;
       targetScrub = (normalizedX - 0.5) * SENSITIVITY;
     });
 
-    // Smooth animation loop with easing
     function animate() {
       if (isVideoReady && video.duration) {
-        // Ease toward target (exponential decay)
         currentScrub += (targetScrub - currentScrub) * SMOOTHING;
-        
-        // Clamp and calculate time
         const clampedScrub = Math.max(-1, Math.min(1, currentScrub));
         const baseTime = video.duration * 0.35;
         const offset = clampedScrub * video.duration * SCRUB_RANGE;
         const targetTime = Math.max(0, Math.min(video.duration, baseTime + offset));
-        
-        // Only update if moved enough (reduces micro-jitter)
         if (Math.abs(video.currentTime - targetTime) > 0.015) {
           video.currentTime = targetTime;
         }
@@ -348,7 +316,7 @@
     animate();
 
     // ===== TYPEWRITER =====
-    const text = "You bought it with good intentions. Now it's rotting in the back of your fridge. Sound familiar?";
+    const text = "Your offline AI agent that tracks every ingredient, alerts you before food expires, and suggests recipes , so you stop wasting money.";
     const typedText = document.getElementById('typed-text');
     const buttons = document.getElementById('buttons');
     let i = 0;
@@ -364,17 +332,10 @@
       }, 38);
     }, 600);
 
-    // Show buttons after delay
     setTimeout(() => {
       buttons.classList.remove('opacity-0', 'translate-y-2');
       buttons.classList.add('opacity-100', 'translate-y-0');
     }, 400);
-
-    // Copy email
-    function copyEmail() {
-      navigator.clipboard.writeText('hello@xpiri.ai');
-      alert('Email copied!');
-    }
   </script>
 </body>
 </html>
