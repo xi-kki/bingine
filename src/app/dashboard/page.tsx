@@ -13,37 +13,33 @@ import {
 } from '@/lib/foodStore'
 import {
   Plus,
-  Trash2,
+  Trash,
   Leaf,
-  AlertTriangle,
+  Warning,
   Clock,
-  Apple,
-  Beef,
+  Orange,
   Fish,
-  Egg,
   Carrot,
-  Banana,
-  Wheat,
-  Milk,
+  Grains,
+  Cheese,
   Coffee,
   Cookie,
-  Package,
+  Jar,
   X,
-  TrendingDown,
-  TrendingUp,
-  BarChart3,
+  TrendDown,
+  ChartBar,
   ChefHat,
   ShoppingCart,
 } from '@phosphor-icons/react'
 
 const CATEGORY_ICONS: Record<FoodCategory, React.ReactNode> = {
   vegetables: <Carrot className="w-8 h-8 text-green-600" weight="duotone" />,
-  fruits: <Apple className="w-8 h-8 text-red-500" weight="duotone" />,
-  meat: <Beef className="w-8 h-8 text-red-700" weight="duotone" />,
-  dairy: <Milk className="w-8 h-8 text-yellow-500" weight="duotone" />,
-  grains: <Wheat className="w-8 h-8 text-amber-600" weight="duotone" />,
-  beverages: <Coffee className="w-8 h-8 text-brown-600" weight="duotone" />,
-  condiments: <Package className="w-8 h-8 text-purple-600" weight="duotone" />,
+  fruits: <Orange className="w-8 h-8 text-red-500" weight="duotone" />,
+  meat: <Fish className="w-8 h-8 text-red-700" weight="duotone" />,
+  dairy: <Cheese className="w-8 h-8 text-yellow-500" weight="duotone" />,
+  grains: <Grains className="w-8 h-8 text-amber-600" weight="duotone" />,
+  beverages: <Coffee className="w-8 h-8 text-amber-700" weight="duotone" />,
+  condiments: <Jar className="w-8 h-8 text-purple-600" weight="duotone" />,
   snacks: <Cookie className="w-8 h-8 text-orange-500" weight="duotone" />,
   other: <ShoppingCart className="w-8 h-8 text-gray-500" weight="duotone" />,
 }
@@ -121,8 +117,8 @@ export default function Dashboard() {
     switch (status) {
       case 'fresh': return <Leaf className="w-4 h-4" weight="duotone" />
       case 'warning': return <Clock className="w-4 h-4" weight="duotone" />
-      case 'expiring': return <AlertTriangle className="w-4 h-4" weight="duotone" />
-      case 'expired': return <TrendingDown className="w-4 h-4" weight="duotone" />
+      case 'expiring': return <Warning className="w-4 h-4" weight="duotone" />
+      case 'expired': return <TrendDown className="w-4 h-4" weight="duotone" />
     }
   }
 
@@ -140,7 +136,7 @@ export default function Dashboard() {
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <a href="/" className="text-2xl font-bold flex items-center gap-2">
             <Leaf className="w-6 h-6" weight="duotone" />
-            Xpiri
+            Bingine
           </a>
           <nav className="flex gap-6">
             <a href="/" className="hover:opacity-80">Home</a>
@@ -228,7 +224,7 @@ export default function Dashboard() {
                         className="text-gray-400 hover:text-red-500 transition-colors p-2"
                         aria-label={`Delete ${item.name}`}
                       >
-                        <Trash2 className="w-5 h-5" weight="duotone" />
+                        <Trash className="w-5 h-5" weight="duotone" />
                       </button>
                     </div>
                   )
@@ -268,7 +264,7 @@ export default function Dashboard() {
             {/* Waste Stats */}
             <div className="bg-white p-6 rounded-2xl shadow-sm">
               <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                <BarChart3 className="w-5 h-5 text-xpiri-green" weight="duotone" />
+                <ChartBar className="w-5 h-5 text-xpiri-green" weight="duotone" />
                 Waste Stats
               </h3>
               <div className="space-y-3">

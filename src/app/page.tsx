@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { Copy, Github, BookOpen, MessageCircle } from '@phosphor-icons/react'
 
 // Typewriter hook
 function useTypewriter(text: string, speed: number = 38, startDelay: number = 600) {
@@ -125,7 +124,7 @@ export default function Home() {
             className="text-[21px] sm:text-[26px] tracking-tight text-black"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            Xpiri
+            Bingine
           </span>
           <span className="text-[25px] sm:text-[30px] text-black select-none" style={{ letterSpacing: '-0.02em' }}>
             ✳︎
@@ -140,7 +139,7 @@ export default function Home() {
           <span className="opacity-40">,</span>
           <a href="#pricing" className="hover:opacity-60 transition-opacity">Pricing</a>
           <span className="opacity-40">,</span>
-          <a href="https://github.com/xi-kki/xpiri" className="hover:opacity-60 transition-opacity">GitHub</a>
+          <a href="https://github.com/xi-kki/bingine" className="hover:opacity-60 transition-opacity">GitHub</a>
         </div>
 
         {/* Desktop CTA */}
@@ -184,7 +183,7 @@ export default function Home() {
         <a href="#features" className="text-[32px] font-medium text-black" onClick={() => setMenuOpen(false)}>Features</a>
         <a href="#how-it-works" className="text-[32px] font-medium text-black" onClick={() => setMenuOpen(false)}>How It Works</a>
         <a href="#pricing" className="text-[32px] font-medium text-black" onClick={() => setMenuOpen(false)}>Pricing</a>
-        <a href="https://github.com/xi-kki/xpiri" className="text-[32px] font-medium text-black" onClick={() => setMenuOpen(false)}>GitHub</a>
+        <a href="https://github.com/xi-kki/bingine" className="text-[32px] font-medium text-black" onClick={() => setMenuOpen(false)}>GitHub</a>
         <a href="/dashboard" className="text-[32px] font-medium text-black underline" onClick={() => setMenuOpen(false)}>Get Started</a>
       </div>
 
@@ -201,7 +200,7 @@ export default function Home() {
                 lineHeight: 1.3,
               }}
             >
-              Hey there, meet Xpiri,<br />
+              Hey there, meet Bingine,<br />
               Your Offline AI for Food Waste Tracking
             </p>
           </div>

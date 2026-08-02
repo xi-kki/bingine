@@ -1,6 +1,6 @@
 'use client'
 
-import { Leaf, Github, ExternalLink } from '@phosphor-icons/react'
+import { Leaf, GithubLogo } from '@phosphor-icons/react'
 
 export default function Hero() {
   return (
@@ -16,7 +16,7 @@ export default function Hero() {
         <div className="mb-8 flex items-center justify-center gap-3">
           <Leaf className="w-16 h-16 md:w-20 md:h-20 text-xpiri-green" weight="duotone" />
           <h1 className="text-6xl md:text-8xl font-bold text-xpiri-green tracking-tight">
-            Xpiri
+            Bingine
           </h1>
         </div>
 
@@ -37,8 +37,8 @@ export default function Hero() {
             <Leaf className="w-5 h-5" weight="duotone" />
             Get Started Free
           </a>
-          <a href="https://github.com/xi-kki/xpiri" className="px-8 py-4 border-2 border-xpiri-green text-xpiri-green rounded-full font-semibold text-lg hover:bg-xpiri-green/5 transition-all text-center flex items-center justify-center gap-2">
-            <Github className="w-5 h-5" weight="duotone" />
+          <a href="https://github.com/xi-kki/bingine" className="px-8 py-4 border-2 border-xpiri-green text-xpiri-green rounded-full font-semibold text-lg hover:bg-xpiri-green/5 transition-all text-center flex items-center justify-center gap-2">
+            <GithubLogo className="w-5 h-5" weight="duotone" />
             View on GitHub
           </a>
         </div>

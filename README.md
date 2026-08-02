@@ -86,7 +86,7 @@ bingine/
 ## 📱 Usage
 
 1. **Add items** — Click "Add Item" and enter your food details
-2. **Track expiry** — Xpiri automatically tracks expiry status
+2. **Track expiry** — Bingine automatically tracks expiry status
 3. **Get recipes** — See recipe suggestions for expiring items
 4. **Save money** — Watch your waste rate go down
 

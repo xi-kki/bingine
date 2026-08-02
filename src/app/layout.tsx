@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Xpiri — Never Let Good Food Go Bad',
+  title: 'Bingine — Never Let Good Food Go Bad',
   description: 'Offline AI agent for food waste tracking. Built for food tech founders who care about sustainability.',
 }
 

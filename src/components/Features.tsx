@@ -1,12 +1,12 @@
 'use client'
 
-import { Brain, ChefHat, Bell, Lock, TrendingUp, TreeEvergreen } from '@phosphor-icons/react'
+import { Brain, ChefHat, Bell, Lock, TrendUp, TreeEvergreen } from '@phosphor-icons/react'
 
 const features = [
   {
     icon: <Brain className="w-10 h-10 text-xpiri-green" weight="duotone" />,
     title: 'Smart Expiry Tracking',
-    description: 'Xpiri remembers every ingredient, its expiry date, and storage location. No more forgotten items in the back of your fridge.',
+    description: 'Bingine remembers every ingredient, its expiry date, and storage location. No more forgotten items in the back of your fridge.',
   },
   {
     icon: <ChefHat className="w-10 h-10 text-xpiri-green" weight="duotone" />,
@@ -24,7 +24,7 @@ const features = [
     description: 'Your data stays on your device. No cloud, no tracking, no privacy concerns. Your kitchen, your data.',
   },
   {
-    icon: <TrendingUp className="w-10 h-10 text-xpiri-green" weight="duotone" />,
+    icon: <TrendUp className="w-10 h-10 text-xpiri-green" weight="duotone" />,
     title: 'Waste Analytics',
     description: 'Track your waste reduction over time. See how much you\'ve saved and where you can improve.',
   },
@@ -45,7 +45,7 @@ export default function Features() {
             Everything you need to stop food waste
           </h2>
           <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-            Xpiri combines smart tracking, AI-powered suggestions, and real-time alerts 
+            Bingine combines smart tracking, AI-powered suggestions, and real-time alerts 
             to help you use every ingredient before it goes bad.
           </p>
         </div>

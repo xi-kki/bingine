@@ -1,13 +1,13 @@
 'use client'
 
-import { Plus, Brain, Bell, TrendingUp, Smartphone, ChartBar } from '@phosphor-icons/react'
+import { Plus, Brain, Bell, TrendUp } from '@phosphor-icons/react'
 
 const steps = [
   {
     number: '01',
     icon: <Plus className="w-8 h-8 text-white" weight="bold" />,
     title: 'Add your ingredients',
-    description: 'Tell Xpiri what you have — via voice, text, or photo. It remembers everything.',
+    description: 'Tell Bingine what you have — via voice, text, or photo. It remembers everything.',
     example: '"5kg chicken breast, expires July 28"',
   },
   {
@@ -21,12 +21,12 @@ const steps = [
     number: '03',
     icon: <Bell className="w-8 h-8 text-white" weight="duotone" />,
     title: 'Get smart alerts',
-    description: 'When something is about to expire, Xpiri notifies you with recipe ideas and action options.',
+    description: 'When something is about to expire, Bingine notifies you with recipe ideas and action options.',
     example: '<SmartPhone /> "Chicken expires tomorrow! Try this 15-min stir-fry recipe"',
   },
   {
     number: '04',
-    icon: <TrendingUp className="w-8 h-8 text-white" weight="duotone" />,
+    icon: <TrendUp className="w-8 h-8 text-white" weight="duotone" />,
     title: 'Reduce waste, save money',
     description: 'Track your progress over time. See how much food and money you\'ve saved.',
     example: '<ChartBar /> "This month: 34% less waste, $420 saved"',
@@ -40,7 +40,7 @@ export default function HowItWorks() {
         {/* Section header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            How Xpiri works
+            How Bingine works
           </h2>
           <p className="text-xl text-gray-500 max-w-2xl mx-auto">
             Four simple steps to zero food waste. No complicated setup, no cloud required.
