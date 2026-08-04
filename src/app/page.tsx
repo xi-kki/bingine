@@ -96,7 +96,7 @@ export default function Home() {
   }, [])
 
   const copyEmail = () => {
-    navigator.clipboard.writeText('hello@xpiri.ai')
+    navigator.clipboard.writeText('hello@bingine.ai')
   }
 
   return (

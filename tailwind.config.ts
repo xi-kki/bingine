@@ -9,10 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'xpiri-green': '#2D5A27',
-        'xpiri-fresh': '#4CAF50',
-        'xpiri-warning': '#FF9800',
-        'xpiri-danger': '#F44336',
+        'bingine-green': '#2D5A27',
+        'bingine-fresh': '#4CAF50',
+        'bingine-warning': '#FF9800',
+        'bingine-danger': '#F44336',
       },
     },
   },

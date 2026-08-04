@@ -1,6 +1,6 @@
 'use client'
 
-import { Leaf, GithubLogo, DiscordLogo, TwitterLogo } from '@phosphor-icons/react'
+import { Leaf, Code2, MessageCircle, AtSign } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -9,31 +9,31 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <Leaf className="w-6 h-6 text-xpiri-green" weight="duotone" />
-            <span className="text-2xl font-bold text-xpiri-green">Bingine</span>
+            <Leaf className="w-6 h-6 text-bingine-green" />
+            <span className="text-2xl font-bold text-bingine-green">Bingine</span>
             <span className="text-sm text-gray-400">v1.0.0</span>
           </div>
 
           {/* Links */}
           <div className="flex gap-6 text-gray-500">
-            <a href="#" className="hover:text-xpiri-green transition-colors">Docs</a>
-            <a href="https://github.com/xi-kki/bingine" className="hover:text-xpiri-green transition-colors flex items-center gap-1">
-              <GithubLogo className="w-4 h-4" weight="duotone" />
+            <a href="#" className="hover:text-bingine-green transition-colors">Docs</a>
+            <a href="https://github.com/xi-kki/bingine" className="hover:text-bingine-green transition-colors flex items-center gap-1">
+              <Code2 className="w-4 h-4" />
               GitHub
             </a>
-            <a href="#" className="hover:text-xpiri-green transition-colors flex items-center gap-1">
-              <DiscordLogo className="w-4 h-4" weight="duotone" />
+            <a href="#" className="hover:text-bingine-green transition-colors flex items-center gap-1">
+              <MessageCircle className="w-4 h-4" />
               Discord
             </a>
-            <a href="#" className="hover:text-xpiri-green transition-colors flex items-center gap-1">
-              <TwitterLogo className="w-4 h-4" weight="duotone" />
+            <a href="#" className="hover:text-bingine-green transition-colors flex items-center gap-1">
+              <AtSign className="w-4 h-4" />
               Twitter
             </a>
           </div>
 
           {/* Tagline */}
           <p className="text-gray-400 text-sm flex items-center gap-1">
-            <Leaf className="w-4 h-4" weight="duotone" />
+            <Leaf className="w-4 h-4" />
             Never let good food go bad.
           </p>
         </div>

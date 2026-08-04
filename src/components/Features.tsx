@@ -1,35 +1,35 @@
 'use client'
 
-import { Brain, ChefHat, Bell, Lock, TrendUp, TreeEvergreen } from '@phosphor-icons/react'
+import { Brain, ChefHat, Bell, Lock, TrendingUp, TreePine } from 'lucide-react'
 
 const features = [
   {
-    icon: <Brain className="w-10 h-10 text-xpiri-green" weight="duotone" />,
+    icon: <Brain className="w-10 h-10 text-bingine-green" />,
     title: 'Smart Expiry Tracking',
     description: 'Bingine remembers every ingredient, its expiry date, and storage location. No more forgotten items in the back of your fridge.',
   },
   {
-    icon: <ChefHat className="w-10 h-10 text-xpiri-green" weight="duotone" />,
+    icon: <ChefHat className="w-10 h-10 text-bingine-green" />,
     title: 'Recipe Suggestions',
     description: 'Get recipe ideas based on what\'s about to expire. Use it before you lose it.',
   },
   {
-    icon: <Bell className="w-10 h-10 text-xpiri-green" weight="duotone" />,
+    icon: <Bell className="w-10 h-10 text-bingine-green" />,
     title: 'Instant Alerts',
     description: 'Get notified via Telegram, WhatsApp, or SMS when items are expiring. Never miss a beat.',
   },
   {
-    icon: <Lock className="w-10 h-10 text-xpiri-green" weight="duotone" />,
+    icon: <Lock className="w-10 h-10 text-bingine-green" />,
     title: '100% Offline',
     description: 'Your data stays on your device. No cloud, no tracking, no privacy concerns. Your kitchen, your data.',
   },
   {
-    icon: <TrendUp className="w-10 h-10 text-xpiri-green" weight="duotone" />,
+    icon: <TrendingUp className="w-10 h-10 text-bingine-green" />,
     title: 'Waste Analytics',
     description: 'Track your waste reduction over time. See how much you\'ve saved and where you can improve.',
   },
   {
-    icon: <TreeEvergreen className="w-10 h-10 text-xpiri-green" weight="duotone" />,
+    icon: <TreePine className="w-10 h-10 text-bingine-green" />,
     title: 'Donate & Compost',
     description: 'Route near-expiry items to local food banks or composting. Reduce waste, help the community.',
   },
@@ -55,7 +55,7 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="p-8 rounded-2xl border border-gray-100 hover:border-xpiri-fresh/30 hover:shadow-lg transition-all group"
+              className="p-8 rounded-2xl border border-gray-100 hover:border-bingine-fresh/30 hover:shadow-lg transition-all group"
             >
               <div className="mb-4 group-hover:scale-110 transition-transform">
                 {feature.icon}

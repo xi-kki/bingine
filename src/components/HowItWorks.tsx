@@ -1,32 +1,32 @@
 'use client'
 
-import { Plus, Brain, Bell, TrendUp } from '@phosphor-icons/react'
+import { Plus, Brain, Bell, TrendingUp } from 'lucide-react'
 
 const steps = [
   {
     number: '01',
-    icon: <Plus className="w-8 h-8 text-white" weight="bold" />,
+    icon: <Plus className="w-8 h-8 text-white" />,
     title: 'Add your ingredients',
     description: 'Tell Bingine what you have — via voice, text, or photo. It remembers everything.',
     example: '"5kg chicken breast, expires July 28"',
   },
   {
     number: '02',
-    icon: <Brain className="w-8 h-8 text-white" weight="duotone" />,
-    title: 'Xpiri tracks & remembers',
+    icon: <Brain className="w-8 h-8 text-white" />,
+    title: 'Bingine tracks & remembers',
     description: 'Our AI builds a knowledge graph of your kitchen. Every item, every expiry date, every recipe.',
     example: 'Chicken → expires July 28 → use in stir-fry or Caesar salad',
   },
   {
     number: '03',
-    icon: <Bell className="w-8 h-8 text-white" weight="duotone" />,
+    icon: <Bell className="w-8 h-8 text-white" />,
     title: 'Get smart alerts',
     description: 'When something is about to expire, Bingine notifies you with recipe ideas and action options.',
     example: '<SmartPhone /> "Chicken expires tomorrow! Try this 15-min stir-fry recipe"',
   },
   {
     number: '04',
-    icon: <TrendUp className="w-8 h-8 text-white" weight="duotone" />,
+    icon: <TrendingUp className="w-8 h-8 text-white" />,
     title: 'Reduce waste, save money',
     description: 'Track your progress over time. See how much food and money you\'ve saved.',
     example: '<ChartBar /> "This month: 34% less waste, $420 saved"',
@@ -35,7 +35,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-24 px-6 bg-gradient-to-b from-white to-xpiri-green/5">
+    <section className="py-24 px-6 bg-gradient-to-b from-white to-bingine-green/5">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">
@@ -55,7 +55,7 @@ export default function HowItWorks() {
               className="flex flex-col md:flex-row items-start gap-8 p-8 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow"
             >
               {/* Step number with icon */}
-              <div className="flex-shrink-0 w-16 h-16 bg-xpiri-green text-white rounded-2xl flex items-center justify-center">
+              <div className="flex-shrink-0 w-16 h-16 bg-bingine-green text-white rounded-2xl flex items-center justify-center">
                 {step.icon}
               </div>
 
@@ -67,7 +67,7 @@ export default function HowItWorks() {
                 <p className="text-gray-500 text-lg mb-4">
                   {step.description}
                 </p>
-                <div className="inline-block px-4 py-2 bg-xpiri-green/5 text-xpiri-green rounded-lg font-mono text-sm">
+                <div className="inline-block px-4 py-2 bg-bingine-green/5 text-bingine-green rounded-lg font-mono text-sm">
                   {step.example}
                 </div>
               </div>

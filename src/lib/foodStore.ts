@@ -33,7 +33,19 @@ export const CATEGORIES: { value: FoodCategory; label: string; icon: string }[] 
   { value: 'other', label: 'Other', icon: 'package' },
 ]
 
-const STORAGE_KEY = 'xpiri-food-items'
+const STORAGE_KEY = 'bingine-food-items'
+const LEGACY_STORAGE_KEY = 'xpiri-food-items' // pre-rebrand key — migrate on read
+
+// Migrate data saved under the old Xpiri key so users keep their items
+function migrateLegacyData(): void {
+  if (typeof window === 'undefined') return
+  if (localStorage.getItem(STORAGE_KEY)) return
+  const legacy = localStorage.getItem(LEGACY_STORAGE_KEY)
+  if (legacy) {
+    localStorage.setItem(STORAGE_KEY, legacy)
+    localStorage.removeItem(LEGACY_STORAGE_KEY)
+  }
+}
 
 // Calculate status based on expiry date
 function calculateStatus(expiryDate: string): FoodItem['status'] {
@@ -50,7 +62,9 @@ function calculateStatus(expiryDate: string): FoodItem['status'] {
 // Get all food items from localStorage
 export function getFoodItems(): FoodItem[] {
   if (typeof window === 'undefined') return []
-  
+
+  migrateLegacyData()
+
   const stored = localStorage.getItem(STORAGE_KEY)
   if (!stored) return []
 
