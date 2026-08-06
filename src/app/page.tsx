@@ -226,7 +226,7 @@ export default function Home() {
       <section className="relative z-1 h-screen flex flex-col justify-end pb-12 md:justify-center md:pb-0 px-5 sm:px-8 md:px-10 overflow-hidden">
         <div className="max-w-xl relative z-10">
           {/* Blurred Intro Label */}
-          <div className="pointer-events-none select-none mb-5 sm:mb-6" style={{ filter: 'blur(4px)' }}>
+          <div className="pointer-events-none select-none mb-5 sm:mb-6" style={{ filter: 'blur(3px)' }}>
             <p
               className="text-black font-normal"
               style={{
