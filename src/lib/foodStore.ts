@@ -59,6 +59,16 @@ function calculateStatus(expiryDate: string): FoodItem['status'] {
   return 'fresh'
 }
 
+// Safe localStorage read — never let corrupt/legacy data crash the app
+function safeParse<T>(raw: string | null): T | null {
+  if (!raw) return null
+  try {
+    return JSON.parse(raw) as T
+  } catch {
+    return null
+  }
+}
+
 // Get all food items from localStorage
 export function getFoodItems(): FoodItem[] {
   if (typeof window === 'undefined') return []
@@ -68,7 +78,7 @@ export function getFoodItems(): FoodItem[] {
   const stored = localStorage.getItem(STORAGE_KEY)
   if (!stored) return []
 
-  const items: FoodItem[] = JSON.parse(stored)
+  const items: FoodItem[] = safeParse<FoodItem[]>(stored) ?? []
   
   // Recalculate status on each read
   return items.map(item => ({

@@ -14,20 +14,20 @@ export default function Footer() {
             <span className="text-sm text-gray-400">v1.0.0</span>
           </div>
 
-          {/* Links */}
+          {/* Links — all point to real destinations */}
           <div className="flex gap-6 text-gray-500">
-            <a href="#" className="hover:text-bingine-green transition-colors">Docs</a>
+            <a href="https://github.com/xi-kki/bingine#readme" className="hover:text-bingine-green transition-colors">Docs</a>
             <a href="https://github.com/xi-kki/bingine" className="hover:text-bingine-green transition-colors flex items-center gap-1">
               <Code2 className="w-4 h-4" />
               GitHub
             </a>
-            <a href="#" className="hover:text-bingine-green transition-colors flex items-center gap-1">
+            <a href="https://github.com/xi-kki/bingine/discussions" className="hover:text-bingine-green transition-colors flex items-center gap-1">
               <MessageCircle className="w-4 h-4" />
-              Discord
+              Discussions
             </a>
-            <a href="#" className="hover:text-bingine-green transition-colors flex items-center gap-1">
+            <a href="https://github.com/xi-kki/bingine/issues" className="hover:text-bingine-green transition-colors flex items-center gap-1">
               <AtSign className="w-4 h-4" />
-              Twitter
+              Issues
             </a>
           </div>
 

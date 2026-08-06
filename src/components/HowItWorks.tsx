@@ -35,7 +35,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-24 px-6 bg-gradient-to-b from-white to-bingine-green/5">
+    <section id="how-it-works" className="py-24 px-6 bg-gradient-to-b from-white to-bingine-green/5">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">

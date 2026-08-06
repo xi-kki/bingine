@@ -1,6 +1,11 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import Features from '@/components/Features'
+import HowItWorks from '@/components/HowItWorks'
+import Pricing from '@/components/Pricing'
+import CTA from '@/components/CTA'
+import Footer from '@/components/Footer'
 
 // Typewriter hook
 function useTypewriter(text: string, speed: number = 38, startDelay: number = 600) {
@@ -31,6 +36,7 @@ export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [menuOpen, setMenuOpen] = useState(false)
   const [showButtons, setShowButtons] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const { displayed, done } = useTypewriter(
     'Glad you stopped in. Good taste tends to find us. Now, what are we building?'
   )
@@ -47,10 +53,19 @@ export default function Home() {
     const SENSITIVITY = 1.5
     const SCRUB_RANGE = 0.35
 
-    // Wait for video metadata
+    // Wait for video metadata — but also handle the case where metadata
+    // already loaded before this effect ran (common on fast connections,
+    // where 'loadedmetadata' fires before React hydrates).
     const handleLoaded = () => {
       isVideoReady = true
       video.currentTime = video.duration * 0.35
+    }
+
+    if (video.readyState >= 1) {
+      // Metadata already available — activate scrub immediately
+      handleLoaded()
+    } else {
+      video.addEventListener('loadedmetadata', handleLoaded)
     }
 
     // Track mouse X position
@@ -95,13 +110,28 @@ export default function Home() {
     return () => clearTimeout(timer)
   }, [])
 
+  // Track scroll to style the navbar over light sections
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   const copyEmail = () => {
     navigator.clipboard.writeText('hello@bingine.ai')
   }
 
   return (
     <>
-      {/* Background Video */}
+      {/* Background Video — with a warm gradient fallback behind it so the hero
+          never renders black-on-black if the video fails to load */}
+      <div
+        className="fixed inset-0 z-0"
+        style={{
+          background: 'linear-gradient(135deg, #fdf6ec 0%, #f8e9d8 40%, #eef5e8 100%)',
+        }}
+      />
       <video
         ref={videoRef}
         className="fixed inset-0 w-full h-full object-cover z-0"
@@ -109,6 +139,7 @@ export default function Home() {
         muted
         playsInline
         preload="auto"
+        poster="/bingine-poster.jpg"
       >
         <source
           src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260530_042513_df96a13b-6155-4f6e-8b93-c9dee66fba08.mp4"
@@ -117,7 +148,11 @@ export default function Home() {
       </video>
 
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-10 px-5 sm:px-8 py-4 sm:py-5 flex justify-between items-center">
+      <nav
+        className={`fixed top-0 left-0 right-0 z-10 px-5 sm:px-8 py-4 sm:py-5 flex justify-between items-center transition-all duration-300 ${
+          scrolled ? 'bg-white/85 backdrop-blur-md shadow-sm' : ''
+        }`}
+      >
         {/* Logo */}
         <div className="flex items-center gap-3">
           <span
@@ -242,6 +277,15 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Below-the-fold sections (navbar anchors) */}
+      <div className="relative z-1">
+        <Features />
+        <HowItWorks />
+        <Pricing />
+        <CTA />
+        <Footer />
+      </div>
 
       {/* Blink Animation */}
       <style jsx global>{`
