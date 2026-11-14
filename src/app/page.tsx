@@ -38,7 +38,7 @@ export default function Home() {
   const [showButtons, setShowButtons] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const { displayed, done } = useTypewriter(
-    'Glad you stopped in. Good taste tends to find us. Now, what are we building?'
+    'Log what you bin. Bingine spots the pattern, flags expiring stock and tells you what to order less of. Works offline.'
   )
 
   // Smooth mouse scrub video with easing
@@ -226,9 +226,9 @@ export default function Home() {
       <section className="relative z-1 h-screen flex flex-col justify-end pb-12 md:justify-center md:pb-0 px-5 sm:px-8 md:px-10 overflow-hidden">
         <div className="max-w-xl relative z-10">
           {/* Blurred Intro Label */}
-          <div className="pointer-events-none select-none mb-5 sm:mb-6" style={{ filter: 'blur(3px)' }}>
-            <p
-              className="text-black font-normal"
+          <div className="mb-5 sm:mb-6">
+            <h1
+              className="text-black font-semibold"
               style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: 'clamp(18px, 4vw, 26px)',
@@ -237,7 +237,7 @@ export default function Home() {
             >
               Hey there, meet Bingine,<br />
               Your Offline AI for Food Waste Tracking
-            </p>
+            </h1>
           </div>
 
           {/* Typewriter Text */}
